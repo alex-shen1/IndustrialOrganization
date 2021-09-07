@@ -1,0 +1,125 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{graphicx,amssymb,amsmath,bm,color,multicol}
+\usepackage{../newcommand}
+\sloppy
+\newcommand{\ignore}[1]{}
+
+\newenvironment{proof}{\noindent{\bf Proof:}}{\qed\bigskip}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma} 
+\newtheorem{claim}{Claim}
+\newtheorem{fact}{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{observation}{Observation}
+\newtheorem{example}{Example}
+\newcommand{\qed}{\rule{7pt}{7pt}}
+
+\newcommand{\homework}[4]{
+	\thispagestyle{plain} 
+	\newpage
+	\setcounter{page}{1}
+	\noindent
+	\begin{center}
+		\framebox{ \vbox{ \hbox to 6.28in
+				{\bf ECON 4190: Industrial Organization \hfill #1} %change course name
+				\vspace{4mm}
+				\hbox to 6.28in
+				{\hspace{2.5in}\large\mbox{Homework #2}}
+				\vspace{4mm}
+				\hbox to 6.28in
+				{{\it Collaborators: #3\hfill}}
+			}}
+		\end{center}
+	}
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+% Modify this command to be your name and computing ID
+\homework{Fall 2021}{$2$}{Alex Shen (as5gd), Sean Velhagen (spv5hq), Max Bresticker (mtb9sex)}
+
+Pledge: On my honor, I pledge that I have neither given nor received help on this assignment 
+Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
+
+\begin{enumerate}
+	
+\item[a.] 
+
+A profit-maximizing firm will seek to max $\pi(Q) = PQ - C(Q)Q$, which we can reduce to $\pi(Q) = PQ$ because Firm 1 has no costs. Since Firm 1 has control over its price $P$, we first attempt to calculate $Q(P)$, or the quantity of consumers that will buy at a given price. To do this we can graph the consumer's utility against location, which yields this:
+
+\includegraphics[scale=0.1]{a-graph.jpg}
+
+We represent the utility of all consumers to the "left" of Firm 1 (i.e. $x<\frac{1}{2}$) with $u_l$ and all consumers to the "right" as $u_r$. They can be represented by the following equations:
+
+\begin{align*}
+u_l &= R_1 - p + T(x-\frac{1}{2}) \\
+u_r &= R_1 - p - T(x-\frac{1}{2})
+\end{align*}
+
+To find $Q$, we would multiply the fraction of the market that is covered by the total mass $M$, but since $M=1$ in this case, we simply have to find the distance between the x-intercepts of $u_r$ and $u_l$: $x_r$ and $x_l$.
+
+First solve for $x_r$ and $x_l$:
+\begin{align*}
+	u_l = 0 = R_1 - p + T(x-\frac{1}{2}) &\Leftrightarrow x_l = \frac{p-R_1}{T} + \frac{1}{2} \\
+	u_r = R_1 - p - T(x - \frac{1}{2}) &\Leftrightarrow x_r = \frac{R_1 - p}{T} + \frac{1}{2} \\
+\end{align*}
+
+Then find the difference:
+
+\begin{align*}
+	Q(p) = x_r - x_l &= \frac{R_1 - p}{T} + \frac{1}{2} - (\frac{p-R_1}{T} + \frac{1}{2}) \\
+	&= \frac{R_1 - p}{T} - \frac{p-R_1}{T} \\
+	&= \frac{2R_1 - 2p}{T} \\
+	Q(p) &= \frac{2}{T} (R_1 - p)
+\end{align*}
+
+Now we return to the profit function and maximize it to find the maximum price:
+
+\begin{align*}
+	max_p \pi &= p * \frac{2}{T}(R_1 - p) = \frac{2R_1p}{T} - \frac{2p^2}{T}\\
+	\frac{\partial\pi}{\partial p} &= \frac{2R_1}{T} - \frac{4p}{T} = 0 \\
+	&\therefore p^* = \frac{R_1}{2}
+\end{align*}
+
+Knowing price makes it easy to calculate maximum profit:
+\begin{align*}
+	\pi^* &= PQ = P * \frac{2}{T} (R_1 - P) \\
+	&= \frac{R_1}{2} \frac{2}{T}(R_1-\frac{R_1}{2}) \\
+	&= \frac{R_1}{T} * \frac{R_1}{2} \\
+	&\therefore \pi^* = \frac{R_1^2}{2T}
+\end{align*}
+
+Note on an edge case: our calculations are only valid as long as $x_l > 0$ and $x_r < 1$, as by definition all customers are between 0 and 1. Therefore, we need to determine a constraint that makes sure this is true.
+
+\begin{multicols}{2}
+\noindent
+	\begin{align*}
+		x_l &> 0 \\
+		\frac{p-R_1}{T} + \frac{1}{2} &> 0 \\
+		\frac{\frac{R_1}{2} - R_1}{T} &> -\frac{1}{2} \\
+		-\frac{R_1}{2} &> -\frac{T}{2} \\
+		R_1 &< T
+	\end{align*}
+	\begin{align*}
+		x_r &< 1 \\
+		\frac{R_1 - p}{T} + \frac{1}{2} &< 1 \\
+		\frac{R_1 - \frac{R_1}{2}}{T} &< \frac{1}{2} \\
+		\frac{R_1}{2} &< \frac{T}{2} \\
+		R_1 &< T
+	\end{align*}
+\end{multicols}
+
+
+{\color{blue}\textbf{Solution: $p^* = \frac{R_1}{2}$, $\pi^* = \frac{R_1^2}{2T}$ when $R_1<T$}}
+\end{enumerate}
+	
+\end{document}
