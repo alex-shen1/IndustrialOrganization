@@ -111,6 +111,58 @@ Then Firm 1 would simply pick whichever scenario (uncovered vs. covered market) 
 {\color{blue}\textbf{Solution: $p^* = \frac{R_1}{2}$, $\pi^* = \frac{R_1^2}{2T}$ when $\frac{R_1^2}{2T} > R_1 - \frac{T}{2}$, otherwise $p^*=\pi^* = R_1 - \frac{T}{2}$ }}
 
 \item [b.] 
+
+The problem is very similar to before - to determine the uncovered market quantity but we simply replace the $\frac{1}{2}$ with $\frac{1}{4}$:
+
+\begin{align*}
+	v_l &= R_1 - p + T(x - \frac{1}{4}) = 0 \Leftrightarrow \hat{x_l} = \frac{p-R_1}{T} + \frac{1}{4} \\
+	v_r &= R_1 - p - T(x - \frac{1}{4}) = 0 \Leftrightarrow \hat{x_r} = \frac{R_1 - p}{T} + \frac{1}{4} \\
+	Q(p) &= \frac{R_1 - p}{T} + \frac{1}{4} - (\frac{p-R_1}{T} + \frac{1}{4}) = 2(\frac{R_1-p_1}{T})
+\end{align*}
+
+Since this is the same $Q(p)$ from part (a), we know that $p^* = \frac{R_1}{2}$, $\pi^* = \frac{R_1^2}{2T}$ when the market is uncovered.
+
+If Firm 1 wants to cover all the way to the left, then $Q$ is entirely determined by $\hat{x_r} = \frac{R_1 - p}{T} + \frac{1}{4}$. This gives us the profit function $\pi = p(\frac{R_1 - p}{T} + \frac{1}{4})$, which we can maximize to solve for $p^*$, and therefore $\pi^*$:
+
+\begin{align*}
+	\pi(p) &= p(\frac{R_1 - p}{T} + \frac{1}{4}) = \frac{R_1}{T}p - \frac{1}{T}p^2 + \frac{1}{4}p \\
+	\frac{\partial\pi}{\partial p} &= \frac{R_1}{T} - \frac{2}{T}p + \frac{1}{4} = 0 \\
+	0 &= 4R_1 - 8p + T  \\
+	p^* &= \frac{1}{2} R_1 + \frac{1}{8} T
+\end{align*}
+
+If Firm 1 wants to cover the entire market, we can calculate price simply by finding what price makes a customer located at 1 indifferent (since 1 is further than 0, any price acceptable to someone at 1 will also work for 0). The distance from $\frac{1}{4}$ to 1 is $\frac{3}{4}$, so $p^* = R_1 - \frac{3}{4}T$. Since the market is fully covered in this case, $Q=1$, so $\pi^* = R_1 - \frac{3}{4}T$ as well.
+
+{\color{blue}\textbf{Solution: there are 3 strategies Firm 1 can choose to employ (uncovered, covered to the left, fully covered); the profit-maximizing price and profit will be determined by which of these strategies has the highest profit based on $R_1$ and $T$. }}
+
+\item[c.]
+
+There is only one "side" Firm 1 has to deal with in this scenario, so the equation becomes easy: $v(x) = R_1 - p - T (1 - x)$
+
+When the market is uncovered, we solve for the location of an indifferent consumer at $\hat{x}$, which we then use to solve for the total quantity $Q$ (i.e. the distance between 1 and $\hat{x}$):
+
+\begin{align*}
+	v(\hat{x}) &= R_1 - p - T (1 - \hat{x}) = 0 \Leftrightarrow \hat{x} = \frac{p - R_1}{T} + 1 = 0 \\
+	&\therefore Q(p) = 1 - \hat{x} = 1 - (\frac{p - R_1}{T} + 1) = \frac{R_1 - p}{T}
+\end{align*}
+
+Given $\pi = Q(p)p$, we can solve for the profit-maximizing $p$:
+
+\begin{align*}
+	\pi &= (\frac{R_1 - p}{T})p = \frac{R_1}{T}p - \frac{1}{T}p^2 \\
+	\frac{\partial\pi}{\partial p} &= \frac{R_1}{T} - \frac{2}{T}p = \Leftrightarrow p^* = \frac{R_1}{2} \\
+	&\therefore \pi^* = \frac{R_1}{2} (\frac{R_1}{2} \frac{1}{T}) = \frac{R_1^2}{4T}
+\end{align*}
+
+When the market is fully covered, set price such that the consumer at 0 will purchase: $p = R_1 - T$. Since $Q=1$ when the market is fully covered, this is also the value of profit.
+
+{\color{blue}\textbf{Solution: $p^*=R_1-T$, $\pi^*=R_1-T$ when $R_1-T>\frac{R_1^2}{4T}$, otherwise $p^*=\frac{R_1}{2}, \pi^*=\frac{R_1^2}{4T}$}}
+
+NOTE: in parts (a), (b), and (c), price/profit increase when $R_1$ increase and decrease when $T$ decreases.
+
+\item[d.]
+Firm 1 will want to be located at $\frac{1}{2}$. For any given combination of the exogenous variables $R_1$ and $T$ that determine our profit-maximizing price and profit, the only effect that changing the location of the firm will have is affecting the travel distance for its customers. Positioning at $\frac{1}{2}$ minimizes the maximum distance a consumer has to travel; moving by any distance $\epsilon$ to be closer to a consumer increases the distance to another consumer by $\epsilon$.
+
 \end{enumerate}
 	
 \end{document}
