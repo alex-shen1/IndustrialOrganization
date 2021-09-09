@@ -58,19 +58,19 @@ A profit-maximizing firm will seek to max $\pi(Q) = PQ - C(Q)Q$, which we can re
 
 \includegraphics[scale=0.1]{a-graph.jpg}
 
-We represent the utility of all consumers to the "left" of Firm 1 (i.e. $x<\frac{1}{2}$) with $u_l$ and all consumers to the "right" as $u_r$. They can be represented by the following equations:
+We represent the utility of all consumers to the "left" of Firm 1 (i.e. $x<\frac{1}{2}$) with $v_l$ and all consumers to the "right" as $v_r$. They can be represented by the following equations:
 
 \begin{align*}
-u_l &= R_1 - p + T(x-\frac{1}{2}) \\
-u_r &= R_1 - p - T(x-\frac{1}{2})
+v_l &= R_1 - p + T(x-\frac{1}{2}) \\
+v_r &= R_1 - p - T(x-\frac{1}{2})
 \end{align*}
 
-To find $Q$, we would multiply the fraction of the market that is covered by the total mass $M$, but since $M=1$ in this case, we simply have to find the distance between the x-intercepts of $u_r$ and $u_l$: $x_r$ and $x_l$.
+To find $Q$, we would multiply the fraction of the market that is covered by the total mass $M$, but since $M=1$ in this case, we simply have to find the distance between the x-intercepts of $v_r$ and $v_l$: $x_r$ and $x_l$.
 
 First solve for $x_r$ and $x_l$:
 \begin{align*}
-	u_l = 0 = R_1 - p + T(x-\frac{1}{2}) &\Leftrightarrow x_l = \frac{p-R_1}{T} + \frac{1}{2} \\
-	u_r = R_1 - p - T(x - \frac{1}{2}) &\Leftrightarrow x_r = \frac{R_1 - p}{T} + \frac{1}{2} \\
+	v_l = 0 = R_1 - p + T(x-\frac{1}{2}) &\Leftrightarrow x_l = \frac{p-R_1}{T} + \frac{1}{2} \\
+	v_r = R_1 - p - T(x - \frac{1}{2}) &\Leftrightarrow x_r = \frac{R_1 - p}{T} + \frac{1}{2} \\
 \end{align*}
 
 Then find the difference:
@@ -98,28 +98,19 @@ Knowing price makes it easy to calculate maximum profit:
 	&\therefore \pi^* = \frac{R_1^2}{2T}
 \end{align*}
 
-Note on an edge case: our calculations are only valid as long as $x_l > 0$ and $x_r < 1$, as by definition all customers are between 0 and 1. Therefore, we need to determine a constraint that makes sure this is true.
+We also need to address the edge case where the market is completely covered; in that case, instead of using our previous derivations, we can use a much simpler form: since we know that the consumers at 0 and 1 are indifferent, we can use $v_l(0) = 0$ to solve for $p^*$ in this case (which also gives us profit, because $Q$ would be exactly 1):
 
-\begin{multicols}{2}
-\noindent
-	\begin{align*}
-		x_l &> 0 \\
-		\frac{p-R_1}{T} + \frac{1}{2} &> 0 \\
-		\frac{\frac{R_1}{2} - R_1}{T} &> -\frac{1}{2} \\
-		-\frac{R_1}{2} &> -\frac{T}{2} \\
-		R_1 &< T
-	\end{align*}
-	\begin{align*}
-		x_r &< 1 \\
-		\frac{R_1 - p}{T} + \frac{1}{2} &< 1 \\
-		\frac{R_1 - \frac{R_1}{2}}{T} &< \frac{1}{2} \\
-		\frac{R_1}{2} &< \frac{T}{2} \\
-		R_1 &< T
-	\end{align*}
-\end{multicols}
+\begin{align*}
+	v_l(0) &= R_1 - p + T(-\frac{1}{2}) = 0\\
+	p^* &= R_1 - \frac{T}{2} \\
+	\pi^* &= R_1 - \frac{T}{2}
+\end{align*}
 
+Then Firm 1 would simply pick whichever scenario (uncovered vs. covered market) has a higher profit based on the parameters.
 
-{\color{blue}\textbf{Solution: $p^* = \frac{R_1}{2}$, $\pi^* = \frac{R_1^2}{2T}$ when $R_1<T$}}
+{\color{blue}\textbf{Solution: $p^* = \frac{R_1}{2}$, $\pi^* = \frac{R_1^2}{2T}$ when $\frac{R_1^2}{2T} > R_1 - \frac{T}{2}$, otherwise $p^*=\pi^* = R_1 - \frac{T}{2}$ }}
+
+\item [b.] 
 \end{enumerate}
 	
 \end{document}
