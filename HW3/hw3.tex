@@ -52,8 +52,53 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 
 \begin{enumerate}
 	
-\item[1.] 
+\item[1.]
 
+\begin{enumerate}
+	\item Let $L$ refer to the left-wing candidate and $R$ refer to the right-wing candidate. Simply as a matter of their positions, $L$ will always receive the $\frac{1}{4}$ to their left, and $R$ will always receive the $\frac{1}{8}$ to their right. However, given a uniform distribution we only have to figure out $\hat{x}$, the location of the voter that is indifferent between the candidates, to determine the share each candidate receives.
+
+	Given the general utility function $v_i = r_i - T | x-l_i |$, utilities for a voter for $L$ and $R$ can be determined to equal $v_L = r_1 - T(x - \frac{1}{4})$ and $v_R = r_2 - T(\frac{7}{8} - x)$ respectively. Now we simply solve for x when $v_L = v_R$:
+	
+	\begin{align*}
+		v_L &= v_R \\
+		r_1 - T(\hat{x} - \frac{1}{4}) &= r_2 - T(\frac{7}{8} - \hat{x}) \\
+		2T(\hat{x}) &= r_1 - r_2 + \frac{9}{8}T \\
+		\hat{x} &= \frac{r_1 - r_2}{2T} + \frac{9}{16}
+	\end{align*}
+	
+	Therefore, $L$ will receive $\hat{x}$ of the vote, and $R$ will receive $1 - \hat{x}$ of the vote.
+	
+	{\color{red} Note: I have numbers written for some reason? Don't think it's possible to have simple numbers}
+
+	\item Very similar process to before, simply change the function slightly.
+	
+	\begin{align*}
+		r_1 - T(\hat{x} - \frac{1}{4})^2 &= r_2 - T(\frac{7}{8} - \hat{x})^2 \\
+		&tl;dr \\
+		\hat{x} &= \frac{4}{5}(\frac{r_1-r_2}{T}) + \frac{9}{16} \\
+	\end{align*}
+
+	{\color{red} TODO: derive pls}
+
+	\item Once again, we know that at the very least, $L$ will always receive the voters spanning the $\frac{1}{4}$ to their left, and $R$ will always receive the voters spannihg the $\frac{1}{8}$ to their right. Given the changed distribution, we know that they will each receive $\frac{1}{8}$ of the votes at least.
+	
+	To determine the rest, we first need the location of the indifferent voter $\hat{x}$, which we already calculated for this equation to be $\frac{r_1 - r_2}{2T} + \frac{9}{16}$. From this, we can then calculate how many votes from the "middle" each candidate gets (represented by $M_L$ and $M_R$ respectively) by multiplying the "distance" to the indifferent voter by the amount of voters between the candidates:
+
+	\begin{multicols}{2}
+		\noindent
+		\begin{align*}
+			M_L &= \frac{\hat{x} - \frac{1}{4}}{\frac{7}{8} - \frac{1}{4}} * \frac{3}{4} \\
+			&tl;dr \\
+			\hat{x} &= \frac{3}{5} * \frac{r_1 - r_2}{T} + \frac{1}{2}
+		\end{align*}
+		\begin{align*}
+			M_R = \frac{\frac{7}{8} - \hat{x}}{\frac{7}{8} - \frac{1}{4}} * \frac{3}{4}
+		\end{align*}		
+	\end{multicols}
+
+	{\color{red} derive pls}
+
+\end{enumerate}
 
 \end{enumerate}
 	
