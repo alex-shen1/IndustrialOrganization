@@ -52,7 +52,7 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 
 \begin{enumerate}
 	
-\item[1.]
+\item
 
 \begin{enumerate}
 	\item Let $L$ refer to the left-wing candidate and $R$ refer to the right-wing candidate. Simply as a matter of their positions, $L$ will always receive the $\frac{1}{4}$ to their left, and $R$ will always receive the $\frac{1}{8}$ to their right. However, given a uniform distribution we only have to figure out $\hat{x}$, the location of the voter that is indifferent between the candidates, to determine the share each candidate receives.
@@ -75,30 +75,46 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 	\begin{align*}
 		r_1 - T(\hat{x} - \frac{1}{4})^2 &= r_2 - T(\frac{7}{8} - \hat{x})^2 \\
 		&tl;dr \\
-		\hat{x} &= \frac{4}{5}(\frac{r_1-r_2}{T}) + \frac{9}{16} \\
+		r_1 - r_2 &= T(\hat{x} - \frac{1}{4})^2 - T(\hat{x} - \frac{7}{8})^2 \\
+		\frac{r_1 - r_2}{T} &= \hat{x}^2 - \frac{\hat{x}}{2} + \frac{1}{16} - \hat{x}^2 + \frac{7}{4}\hat{x} - \frac{49}{64} \\
+		\frac{r_1 - r_2}{T} + \frac{45}{64} &= \frac{5}{4} \hat{x} \\
+		\hat{x} &= \frac{4}{5}(\frac{r_1-r_2}{T}) + \frac{9}{16}
+		% 1 - \hat{x} &= \frac{r_2 - r_1}{2T}
 	\end{align*}
 
 	{\color{red} TODO: derive pls}
 
 	\item Once again, we know that at the very least, $L$ will always receive the voters spanning the $\frac{1}{4}$ to their left, and $R$ will always receive the voters spannihg the $\frac{1}{8}$ to their right. Given the changed distribution, we know that they will each receive $\frac{1}{8}$ of the votes at least.
 	
-	To determine the rest, we first need the location of the indifferent voter $\hat{x}$, which we already calculated for this equation to be $\frac{r_1 - r_2}{2T} + \frac{9}{16}$. From this, we can then calculate how many votes from the "middle" each candidate gets (represented by $M_L$ and $M_R$ respectively) by multiplying the "distance" to the indifferent voter by the amount of voters between the candidates:
+	To determine the rest, we need to determine how the votes in the middle are split. Thankfully, we already calculated the location of the indifferent voter $\hat{x}$ in part A to be $\frac{r_1 - r_2}{2T} + \frac{9}{16}$ which we can reuse here. From this, we can then calculate how many votes from the "middle" each candidate gets by multiplying the "distance" to the indifferent voter from each candidate by the voter density within that region, $\frac{3}{4} * \frac{1}{\frac{7}{8} - \frac{1}{4}} = \frac{6}{5}$. We know that each candidate also receives $\frac{1}{8}$ from their base, and also since there are only 2 candidates, the number of votes from either candidate can be determined once we know one. We solve for the votes gained by the left candidate as followed:
 
-	\begin{multicols}{2}
-		\noindent
-		\begin{align*}
-			M_L &= \frac{\hat{x} - \frac{1}{4}}{\frac{7}{8} - \frac{1}{4}} * \frac{3}{4} \\
-			&tl;dr \\
-			\hat{x} &= \frac{3}{5} * \frac{r_1 - r_2}{T} + \frac{1}{2}
-		\end{align*}
-		\begin{align*}
-			M_R = \frac{\frac{7}{8} - \hat{x}}{\frac{7}{8} - \frac{1}{4}} * \frac{3}{4}
-		\end{align*}		
-	\end{multicols}
+	\begin{align*}
+		{votes}_L &= \frac{6}{5} (\hat{x} - \frac{1}{4}) + \frac{1}{8} \\
+		% &tl;dr \\
+		&= \frac{6}{5} (\frac{r_1-r_2}{2T} + \frac{9}{16} - \frac{1}{4}) + \frac{1}{8} \\
+		&= \frac{3}{5} * \frac{r_1 - r_2}{2T} + \frac{6}{5} * \frac{5}{16} + \frac{1}{8} \\
+		{votes}_L &= \frac{3}{5} * \frac{r_1 - r_2}{2T} + \frac{1}{2} \\
+		{votes}_R &= 1 - {votes}_L = \frac{3}{5} * \frac{r_2 - r_1}{2T} + \frac{1}{2}
+	\end{align*}
 
-	{\color{red} derive pls}
-
+	\item 
 \end{enumerate}
+
+\item 
+
+\begin{enumerate}
+	\item To find $Q_i$, we first have to find the indifferent consumers between firm $i$ and firms $i-1$ and $i+1$, called $\hat{x}_L$ and $\hat{x}_R$. Using the utility equation $v_i = r - p_i - T | x - l_i |$, we can solve for both as follows:
+\end{enumerate}
+
+\begin{multicols}{2}
+	\noindent
+	\begin{align*}
+		r - p_{i-1} - T(\hat{x}_L - \frac{i-1}{n}) = r - p_i - T(\frac{i}{n} - \hat{x}_L)
+	\end{align*}
+	\begin{align*}
+		\hat{x}_R
+	\end{align*}
+\end{multicols}
 
 \end{enumerate}
 	
