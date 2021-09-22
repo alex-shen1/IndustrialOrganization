@@ -56,8 +56,51 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 
 \item[2.]
 
-\item[3.]
+\begin{enumerate}
+	\item Given $Q = 200 - 2P$, we know that $P = 100 - \frac{1}{2}Q$. If Apple is a monopolist with $MC = 4$, its profit can be determined by $\pi(Q) = (P-C)Q =  (100 - \frac{1}{2}Q - 4) (Q)$. Thus, the first order condition for this equation is $\frac{d \pi}{d P} = 96 - Q = 0$, meaning that $Q^M = 96$. Plugging this value back into our previous equations gives us $P^M = 52$ and $\pi^M = 96 * (52- 4) = 4608$.
+	
+	{\color{blue}\textbf{Solution:} $Q^M = 96$, $P^M = 52$, $\pi^M = 4608$}
 
+	\item Since a competitive firm supplies along its MC curve (meaning that $p = MC$, which we know to be true in perfect competition), to solve for a given firm's quantity produced, $q$, we simply substitute in price and invert their MC function to get $q = \frac{p-20}{6}$. Since there are 12 identical firms in the fringe, the fringe supply is in total $12 * (\frac{p-20}{6}) = 2p - 40$. Importantly, we have to also add the constraint that this curve only holds when $p \geq 20$, as otherwise the firm would be producing a negative quantity which is impossible.
+	
+	{\color{blue}\textbf{Solution:} $Q_{fringe} = 2p - 40$ if $p \geq 20$, otherwise 0}
+
+	\item We first find the residual demand for Apple's product ($Q_{Apple}$) by subtracting the quantity the fringe will produce ($Q_{fringe}$) at a given price from the total market demand ($Q_{market}$) at a given price.
+	\begin{align*}
+		Q_{Apple} &= Q_{market} - Q_{fringe} \\
+		&= 200 - 2P - (2P - 40) \\
+		&= 240 - 4P \\
+		\therefore P &= 60 - \frac{1}{4}Q_{Apple}
+	\end{align*}
+
+	We then maximize the resulting profit function to determine $Q_{Apple}$:
+
+	\begin{align*}
+		max_{Q_{Apple}} \pi &= (60 - \frac{1}{4}Q_{Apple} - 4) * Q_{Apple} \\
+		\frac{d\pi}{d Q_{Apple}} &= 56 - \frac{1}{2} Q_{Apple} = 0 \\
+		\therefore Q_{Apple} &= 56 * 2 = 112
+	\end{align*}
+
+	From there, everything else is straightforward - plug in $Q_{Apple}$ to find $P = 60 - \frac{112}{4} = 32$, which then gives us $Q_{fringe} = 2(32) - 40 = 24$ and $\pi_{Apple} = (56 - \frac{112}{4}) * 112 = 3136$.
+
+	{\color{blue}\textbf{Solution:} $Q_{Apple} = 112$, $P = 32$,  $Q_{fringe} = 24$,  $\pi_{Apple} = 3136$}
+
+	\item {\color{red} TODO: graph 2C}
+\end{enumerate}
+
+\item[3.] From $TC(Q) = 8Q$, we know that $MC = 8$. Total quantity demanded by the market is $Q = 56 - P$, so subtracting $Q_{fringe}$ to find Britney's residual demand gives us $Q_{B} = 56 - P - (2P - y) = 56 - 3P + y$. We then maximize her derived profit function as follows to find the relationship between $y$ and $P^*$:
+
+\begin{align*}
+	max_{p} \pi_B &= (56 - 3P + y) * (p - 8) \\
+	FOC: \frac{d \pi}{d p} &= (56 - 3P + y) - (-3)(p - 8) = 0\\
+	0 &= 56 - 3P + y - 3P + 24 \\
+	0 &= 80 - 6P + y \\
+	y &= 6P - 80
+\end{align*}
+
+Since we know that $P=16$, simple substitution yields that $y = 6 * 16 - 80 = 16$, which gives us $Q_B = 56 - 3*16 + 16 = 24$ and $Q_{fringe} = 2*16 - 16 = 16$.
+
+{\color{blue}\textbf{Solution:} $y = 16$, $Q_B = 24$, $Q_{fringe} = 16$ }
 
 \end{enumerate}
 	
