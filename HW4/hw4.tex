@@ -54,6 +54,67 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 \begin{enumerate}
 	
 \item[1.] 
+\begin{enumerate}
+	\item As usual, we find $\hat{x}$, the indifferent consumer between Firms 1 and 2. Since $M=1$, this will also give us $Q_1$, the quantity produced by Firm 1, and therefore $1-\hat{x} = Q_2$, the quantity produced by Firm 2. Since the value for a consumer at $\hat{x}$ must be the same for both, assuming that the market is fully covered we can simply use the utility equation to solve for $\hat{x}$ as such:
+	
+	\begin{align*}
+		R - p_1 - \tau \hat{x} &= R - p_2 - \tau(1-\hat{x}) \\
+		p_2 - p_1 + 1 &= 2 \tau \hat{x} \\
+		\hat{x} &= \frac{p_2 - p_1}{2\tau} + \frac{1}{2}
+	\end{align*}
+
+	Using $\hat{x}$ as $Q_1$, we maximize Firm 1's profit equation to solve for its reaction function for $p_1$, which will then give us Firm 2's reaction function for $p_2$ by symmetry:
+	
+	\begin{align*}
+		max_{p_1} \pi_1 &= (\frac{p_2 - p_1}{2\tau} + \frac{1}{2})(p_1 - c_1) \\
+		\frac{\partial \pi}{\partial p_1} &= (-\frac{1}{2\tau})(p_1 - c) + \frac{p_2 - p_1}{2\tau} + \frac{1}{2} = 0 \\
+		0 &= \frac{p_2 - p_1 - (p_1 - c_1)}{2\tau} + \frac{1}{2} \\
+		&= \frac{p_2 - 2p_1 + c}{2\tau} + \frac{1}{2} \\
+		\therefore p_1^* &= \frac{p_2 + c_1 + \tau}{2} \\ 
+		\therefore p_2^* &= \frac{p_1 + c_2 + \tau}{2}
+	\end{align*}
+
+	Plugging Firm 2's reaction function into Firm 1's allows us to solve for $p_1^*$ and then $p_2^*$:
+
+	\begin{align*}
+		p_1 &= \frac{\frac{p_1 + c_2 + \tau}{2} + c_1 + \tau}{2} \\
+		4p_1 &= p_1 + c_2 + \tau + 2c_1 + 2\tau \\
+		p_1^* &= \tau + \frac{2c_1 + c_2}{3} \\ 
+		\therefore p_2^* &= \tau + \frac{2c_2 + c_1}{3}
+	\end{align*}
+
+	{\color{blue}\textbf{Solution:} In Bertrand-Nash equilibrium, $p_1^* = \tau + \frac{2c_1 + c_2}{3}$, $p_2^* = \tau + \frac{2c_2 + c_1}{3}$}
+
+	\item When colluding, the firms will set prices such that the indifferent consumer receives a utility of 0, which minimizes total consumer surplus (thus maximizing producer surplus/profit). Plugging back the calculated $\hat{x}$ into our value functions gives us the following:
+	
+	\begin{multicols}{2}
+		\noindent
+		\begin{align*}
+			R - p_1 - \tau (\frac{p_2 - p_1}{2\tau} + \frac{1}{2}) = 0
+		\end{align*}
+		\noindent
+		\begin{align*}
+			&R - p_2 - \tau (1 - ((\frac{p_2 - p_1}{2\tau} + \frac{1}{2}))) = 0 \\
+			&R - p_2 - \tau (\frac{p_1 - p_2}{2\tau} + \frac{1}{2}) = 0
+		\end{align*}
+	\end{multicols}
+
+	Given the symmetry we see in these equations, we can conclude that $p_1 = p_2$. This also makes sense intuitively both because this sets the indifferent consumer point exactly between them, and means they split the profit evenly. In any case, redoing our equation with $p_1 = p_2$ gives us $p_1 = R - \frac{\tau}{2} = p_2$.
+
+	{\color{blue}\textbf{Solution:} If colluding, Firms 1 and 2 will both set their price to $R - \frac{\tau}{2}$.}
+
+	\item To verify sustainability, we simply assume that a given firm (say, Firm 2) is using that price, use the reaction function for the other firm (Firm 1 in this case) to see what its best response is, and see if the value matches the collusion price.
+	
+	\begin{align*}
+		p_1^*(p_2) &= \frac{p_2 + c_1 + \tau}{2} \\
+		p_1^*(R - \frac{\tau}{2}) &= \frac{R - \frac{\tau}{2} + c_1 + \tau}{2} \\
+		&= \frac{R + c_1}{2} + \frac{\tau}{4}
+	\end{align*}
+
+	This is obviously not the same thing as the collusion price, so Firm 1 will deviate from colluding. Because of symmetry, we also know that Firm 2 will deviate for similar reasons. Thus, collusion is not sustainable.
+
+	{\color{blue} \textbf{Solution:} No, collusion is not sustainable.}
+\end{enumerate} 
 
 \item[2.]
 
@@ -86,7 +147,9 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 
 	{\color{blue}\textbf{Solution:} $Q_{Apple} = 112$, $P = 32$,  $Q_{fringe} = 24$,  $\pi_{Apple} = 3136$}
 
-	\item {\includegraphics[width=\textwidth]{HW4/images/thing.png}}
+	\item Graph as shown:
+	
+	{\includegraphics[width=\textwidth]{2d.png}}
 \end{enumerate}
 
 \item[3.] From $TC(Q) = 8Q$, we know that $MC = 8$. Total quantity demanded by the market is $Q = 56 - P$, so subtracting $Q_{fringe}$ to find Britney's residual demand gives us $Q_{B} = 56 - P - (2P - y) = 56 - 3P + y$. We then maximize her derived profit function as follows to find the relationship between $y$ and $P^*$:
