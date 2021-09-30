@@ -53,6 +53,67 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 \begin{enumerate}
 	
 \item[3.2)] 
+\begin{enumerate}
+    \item[1.] Note that marginal costs for firms 1 and 2 are $c_1$ and $c_2$ respectively. With that in mind, we maximize their profit functions with respect to quantity (firm 1 work is shown, but by symmetry we solve for both):
+    \begin{align*}
+        max_{q_1} \pi_1 &= (a - q_1 - q_2 - c_1)q_1 \\
+        \frac{\partial \pi_1}{\partial q_1} &= a - 2q_1 - q_2 - c = 0 \\
+        q_1 &= \frac{a - q_2 - c_1}{2} \\
+        \therefore q_2 &= \frac{a - q_1 - c_2}{2} \\
+        \therefore q_1 &= \frac{a - \frac{a - q_1 - c_2}{2} - c_1}{2} \\
+        4q_1 &= 2a - a + q_1 + c_2 - 2c_1 \\
+        q_1 &= \frac{a + c_2 - 2c_1}{3} \\
+        \therefore q_2 &= \frac{a + c_1 - 2c_2}{3}
+    \end{align*}  
+
+    Market share can be computed by simply finding $\frac{q_i}{Q}$:
+    \begin{align*}
+        share_1 &= \frac{a + c_2 - 2c_1}{3} / (\frac{a + c_2 - 2c_1}{3} + \frac{a + c_1 - 2c_2}{3}) \\
+        &= \frac{a + c_2 - 2c_1}{3} * \frac{3}{2a - c_1 - c_2} \\
+        share_1 &= \frac{a + c_2 - 2c_1}{2a - c_1 - c_2} \\
+        share_2 &= 1 - share_1 = \frac{a + c_1 - 2c_2}{2a - c_1 - c_2}
+    \end{align*}
+
+    {\color{blue}\textbf{Solution:} $q_1 = \frac{a + c_2 - 2c_1}{3}, q_2 = \frac{a + c_1 - 2c_2}{3}, share_1= \frac{a + c_2 - 2c_1}{2a - c_1 - c_2}, share_2 = \frac{a + c_1 - 2c_2}{2a - c_1 - c_2}$}
+
+    \item[2.] Plug in quantities to determine price and then profits (by symmetry):
+    \begin{align*}
+        p &= a - q_1 - q_2 = \frac{3a}{3} - \frac{a + c_2 - 2c_1}{3} - \frac{a + c_1 - 2c_2}{3} \\
+        p &= \frac{a + c_2 + c_1}{3} \\
+        \pi_1 &= (\frac{a + c_2 + c_1}{3} - \frac{3c_1}{3})(\frac{a + c_2 - 2c_1}{3}) \\
+        &= (\frac{a + c_2 - 2c_1}{3})^2 = q_1^2\\
+        \therefore \pi_2 &= (\frac{a + c_1 - 2c_2}{3})^2 = q_2^2
+    \end{align*} 
+
+    Consumer surplus can be measured by finding the definite integral of the demand up to $Q$ (i.e. $q_1 + q_2$), then subtracting the revenue. Graphically, this is the triangle where CS is.
+
+    \begin{align*}
+        CS &= \int_0^{q_1 + q_2}[a - Q]dQ - (a - q_1 - q_2)(q_1 + q_2) \\
+        &= a(q_1+q_2) - \frac{1}{2}(q_1 + q_2)^2 - (a - q_1 - q_2)(q_1 + q_2) \\
+        &= (q_1 + q_2)^2 - \frac{1}{2}(q_1 + q_2)^2 \\
+        &= \frac{1}{2}(q_1 + q_2)^2
+    \end{align*}
+     
+    Total welfare can be calculated simply by adding CS and profits:
+    \begin{align*}
+        W = \frac{1}{2}(q_1 + q_2)^2 + q_1^2 + q_2^2
+    \end{align*}
+
+    {\color{blue} \textbf{Solution:} $CS = \frac{1}{2}(q_1 + q_2)^2, PS = q_1^2 + q_2^2, W = \frac{1}{2}(q_1 + q_2)^2 + q_1^2 + q_2^2$}
+    \item[3.] Differentiate $W$ with respect to $c_2$:
+    \begin{align*}
+        W &= \frac{1}{2}(q_1 + q_2)^2 + q_1^2 + q_2^2 \\
+        &= \frac{1}{2}(\frac{a + c_2 - 2c_1}{3} + \frac{a + c_1 - 2c_2}{3})^2 + (\frac{a + c_2 - 2c_1}{3})^2 + (\frac{a + c_1 - 2c_2}{3})^2 \\
+        &= \frac{1}{2}(\frac{2a - c_1 - c_2}{3})^2 + (\frac{a + c_2 - 2c_1}{3})^2 + (\frac{a + c_1 - 2c_2}{3})^2 \\
+        \frac{\partial W}{\partial c_2} &= (\frac{2a - c_1 - c_2}{3})(-\frac{1}{3}) + 2(\frac{a + c_2 - 2c_1}{3})(\frac{1}{3}) + 2(\frac{a + c_1 - 2c_2}{3})(-\frac{2}{3}) \\
+        &= (q_1 + q_2)(-\frac{1}{3}) + \frac{2}{3}q_1 - \frac{4}{3}q_2 \\
+        &= \frac{1}{3} (-q_1 - q_2 + 2q_1 - 4q_2) = \frac{1}{3}(q_1 - 5q_2) = \frac{1}{3} (q_1 + q_2 - 6q_2) \\
+        &= 2 * \frac{1}{6} (q_1 + q_2 - 6q_2) = 2 (q_1 + q_2)(\frac{1}{6} - \frac{q_2}{q_1 + q_2}) \\
+        \frac{\partial W}{\partial c_2} &= 2 (q_1 + q_2)(\frac{1}{6} - share_2)
+    \end{align*} 
+
+    Thus, if $c_2$ decreases, we know that $W$ will increase when firm 2's market share is greater than $\frac{1}{6}$, and will decrease if market share is less than $\frac{1}{6}$. $\qed$
+\end{enumerate} 
 
 \item[4.1)]
 \begin{enumerate}
