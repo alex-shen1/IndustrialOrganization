@@ -18,6 +18,12 @@
 \newtheorem{example}{Example}
 \newcommand{\qed}{\rule{7pt}{7pt}}
 
+\usepackage{times}
+\usepackage{ulem}
+\usepackage[nocenter]{qtree}
+\usepackage{tree-dvips}
+\usepackage{gb4e}
+
 \newcommand{\homework}[4]{
 	\thispagestyle{plain} 
 	\newpage
@@ -52,11 +58,120 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 
 \begin{enumerate}
 	
-\item[1.] 
+\item[3.2)] 
 
-\item[2.]
+\item[4.1)]
 
-\item[3.]
+\item[4.3)] The game tree here can be visualized as follows:
+
+{\color{red}picture here}
+                                      
+In scenarios where Firm 2 discloses its cost, Firm 1's response is very simple - it will produce the Cournot quantity (and thus receive Cournot equilibrium profits) when $c_2 = 0$, and produce the monpolist quantity (receiving monopolist profits) when $c_2$ is sufficiently high to prevent Firm 2 from entering the market. 
+
+When Firm 2 doesn't disclose its cost, Firm 1 can only maximize its profit function using an expected value for $q_2$. Since the probability of both cases is $p=0.5$, $E(p_2)$ can be determined simply by halving the quantity Firm 2 produces in the Cournot equilibrium. Given this value, we can simply derive Firm 1's best response as follows:
+
+{\color{red} math here}
+
+\item[4)]
+
+\begin{enumerate}
+
+    \item In general, the profit function for a monopoly (colluding firms) is as follows:
+    \begin{align*}
+        \pi^m &= P(Q)Q - c(Q)
+    \end{align*}
+    
+    In this case, $P(Q) = a-bQ$ and $c(Q) = cQ$, so:
+    \begin{align*}
+        \pi^m &= (a-bQ)Q - cQ\\
+        FOC_{wrt.Q}: 0 &= a-2bQ^m - c\\
+        Q^m &= \frac{a-c}{2b}
+    \end{align*}
+    
+    Firm i's profit function in a 2-firm Cournot model with the given inverse demand and cost function is as follows:
+    \begin{align*}
+        \pi_i &= (a - b(q_1 + q_2))q_i - cq_i
+    \end{align*}
+    
+    So, the firms' profit functions are as follows:
+    \begin{align*}
+        \pi_1 &= (a - b(q_1 + q_2))q_1 - cq_1\\
+        \pi_2 &= (a - b(q_1 + q_2))q_2 - cq_2
+    \end{align*}
+    
+    It is easily seen here that optimizing firm 1's profits will give a similar expression to optimizing firm 2's profits, just with $q_1$ and $q_2$ interchanged. Let us optimize firm 1:
+    \begin{align*}
+        FOC_{wrt.q_1}: 0 &= -bq_1^c + (a-b(q_1^c + q_2)) - c\\
+        0 &= a - 2bq_1^c - bq_2 - c\\
+        q_1^c &= \frac{a - bq_2 - c}{2b}
+    \end{align*}
+    
+    We may interchange $q_1$ and $q_2$ to find $q_2^c$:
+    \begin{align*}
+        q_2^c &= \frac{a - bq_1 - c}{2b}
+    \end{align*}
+    
+    To find the Cournot equilibrium, we can plug in firm 2's best response  function into firm 1's best response function and solve for $q_1^c$ as a function of constants. Again, we see here that the process for solving for $q_1^c$ as a function of constants is similar to the process for solving for $q_2^c$ as a function of constants, just with $q_1^c$ and $q_2^c$ flipped. Plugging $q_2^c$ into firm 1's best response function, we have:
+    \begin{align*}
+        q_1^c &= \frac{a - b(\frac{a - bq_1^c - c}{2b}) - c}{2b}\\
+        q_1^c &= \frac{a}{2b} - \frac{a}{4b} + \frac{q_1^c}{4} + \frac{c}{4b} - \frac{c}{2b}\\
+        \frac{3}{4}q_1^c &= \frac{a}{4b} - \frac{c}{4b}\\
+        q_1^c &= \frac{a-c}{3b}
+    \end{align*}
+    
+    We may interchange $q_1^c$ and $q_2^c$ to find $q_2^c$ as a function of constants:
+    \begin{align*}
+        q_2^c &= \frac{a-c}{3b}\\
+        Q &= q_1 + q_2\\
+        Q^c &= q_1^c + q_2^c\\
+        Q^c &= \frac{2(a-c)}{3b}\\
+        Q^m &= \frac{a-c}{2b}\\
+        \frac{2(a-c)}{3b} &> \frac{a-c}{2b}\\
+        Q^c &> Q^m \ \blacksquare
+    \end{align*}
+    
+    \item 
+    
+    \item $MC(q_i) = cq_i$, so the profit function for firm i is as follows:
+    \begin{align*}
+        \pi_i &= (a - b(q_1 + q_2))q_i - \frac{cq_i^2}{2}
+    \end{align*}
+    
+    We can find $q_1^c$ and $q_2^c$ using the same techniques that we used in 4.a:
+    \begin{align*}
+        \pi_1 &= (a - b(q_1 + q_2))q_1 - \frac{cq_1^2}{2}\\
+        FOC_{wrt.q_1}: 0 &= -bq_1^c + (a-b(q_1^c + q_2)) - cq_1^c\\
+        0 &= a - (2b + c)q_1^c - bq_2\\
+        q_1^c &= \frac{a - bq_2}{2b + c}
+    \end{align*}
+    
+    By symmetry, we have:
+    \begin{align*}
+        q_2^c &= \frac{a - bq_1^c}{2b + c}
+    \end{align*}
+    
+    Again, we plug $q_2^c$ into $q_1^c$ to get $q_1^c$ as a function of constants:
+    \begin{align*}
+        q_1^c &= \frac{a - b(\frac{a - bq_1^c}{2b + c})}{2b + c}\\
+        q_1^c &= \frac{a}{2b+c} - \frac{ab}{(2b+c)^2} + \frac{b^2q_1^c}{(2b+c)^2}\\
+        (1-\frac{b^2}{(2b+c)^2})q_1^c &= \frac{a(b+c)}{(2b+c)^2}\\
+        ((2b+c)^2 - b^2)q_1^c &= a(b+c)\\
+        q_1^c &= \frac{a(b+c)}{3b^2 + 4bc + c^2}
+    \end{align*}
+    
+    By symmetry, we have:
+    \begin{align*}
+        q_2^c &= \frac{a(b+c)}{3b^2 + 4bc + c^2}\\
+        Q^c &= q_1^c + q_2^c\\
+        \therefore Q^c &= \frac{2a(b+c)}{3b^2 + 4bc + c^2}
+    \end{align*}
+    
+    \item Now that $c_1$ isn't necessarily equal to $c_2$, the monopoly (collusion) profit function is as follows:
+    \begin{align*}
+        \pi^m &= (a-b(q_1 + q_2))(q_1 + q_2) - (c_1q_1 + c_2q_2)
+    \end{align*}
+
+\end{enumerate}
 
 
 \end{enumerate}
