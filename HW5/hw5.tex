@@ -61,16 +61,55 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 \item[3.2)] 
 
 \item[4.1)]
+\begin{enumerate}
+    \item[1.] We start off by maximizing Firm 1's profit:
+    \begin{align*}
+        max_{p_1} \pi_1 &= (a-2p_1 + p_2)(p_1 - 0) \\
+        \frac{\partial \pi_1}{\partial p_1} &= a - 4p_1 + p_2 = 0 \\
+        \therefore p_1 &= \frac{a + p_2}{4}
+    \end{align*} 
+    Then, maximize Firm 2's profit to solve for $p_2$, and then plug in $p_1$ to solve for both:
+    \begin{align*}
+        max_{p_2} \pi_2 &= (a-2p_2 + p_1)(p_2 - c) \\
+        \frac{\partial \pi_2}{\partial p_2} &= (a - 2p_2 + p_1) + (p_2 - c)(-2) = 0 \\
+        0 &= a - 2p_2 + p_1 - 2p_2 + 2c \\
+        \therefore p_2 &= \frac{p_1 + a + 2c}{4} = \frac{\frac{a + p_2}{4} + a + 2c}{4} \\
+        16p_2 &= a + p_2 + 4a + 8c \\
+        \therefore p_2 &= \frac{5a + 8c}{15} \\
+        \therefore p_1 &= \frac{5 + 2a}{15}
+    \end{align*} 
+    \item[2.] 
+    \item[3.] 
+\end{enumerate}
 
-\item[4.3)] The game tree here can be visualized as follows:
+\item[4.3)] 
 
-{\color{red}picture here}
-                                      
-In scenarios where Firm 2 discloses its cost, Firm 1's response is very simple - it will produce the Cournot quantity (and thus receive Cournot equilibrium profits) when $c_2 = 0$, and produce the monpolist quantity (receiving monopolist profits) when $c_2$ is sufficiently high to prevent Firm 2 from entering the market. 
+\begin{enumerate}
+    \item[1.] The game tree here can be (roughly) visualized as follows:
 
-When Firm 2 doesn't disclose its cost, Firm 1 can only maximize its profit function using an expected value for $q_2$. Since the probability of both cases is $p=0.5$, $E(p_2)$ can be determined simply by halving the quantity Firm 2 produces in the Cournot equilibrium. Given this value, we can simply derive Firm 1's best response as follows:
+    \includegraphics[scale=0.15]{game-tree.jpg}
+                                          
+    In scenarios where Firm 2 discloses its cost, Firm 1's response is very simple - when $c_2 = 0$, the firms have equal costs and will thus reach the Cournot equilibrium outcome, where $q_1 = q_2 = \frac{1}{3}$, and $\pi_1 = \pi_2 = (1-q -q)* q= \frac{1}{9}$. If $c_2$ is prohibitively high, then Firm 1 will simply act as a monopolist, producing $q=\frac{1}{2}$ with a profit of $\frac{1}{4}$, whereas Firm 2 will have a quantity produced and profit of 0.
+    
+    When Firm 2 doesn't disclose its cost, Firm 1 can only maximize its profit function using an expected value for $q_2$. Since the probability of both cases is $p=0.5$, $E(p_2)$ can be determined simply by halving the quantity Firm 2 produces in the Cournot equilibrium, so $E(q_2) = \frac{1-q_1}{2} * \frac{1}{2} = \frac{1-q_1}{4}$. Given this value, we can simply derive Firm 1's best response as follows by maximizing their expected profit:
+    
+    \begin{align*}
+        max_{q_1} E(\pi_1) &= (1 - q_1 - E(q_2)) * (q_1) \\
+        \frac{\partial E(\pi_1)}{\partial q_1} &= 1 - 2q_1 - E(q_2) = 0 \\
+        \therefore q_1^* &= \frac{1 - E(q_2)}{2} \\
+        &= \frac{1}{2} * (1 - \frac{1-q_1}{4}) \\
+        8q_1 &= 4 - 1 + q_1 \\
+        q_1 &= \frac{3}{7} \\
+        \therefore q_2 &= \frac{2}{7}
+    \end{align*}
+    
+    With these quantities, we can easily determine the profits to be $\pi_1 = (1 - \frac{3}{7} - \frac{2}{2*7}) * \frac{3}{7} = \frac{9}{49}$ (plugging back into our expected value function) and $\pi_2 = (1 - \frac{3}{7} - \frac{2}{7}) * \frac{2}{7} = \frac{4}{49}$ (since Firm 1 is always in the market, Firm 2 doesn't need to use expected values).
+    
+    {\color{blue}\textbf{Solution:} With information sharing, the outcome will either resemble that of Cournot duopoly if $c_2=0$ or monopoly by Firm 1 if $c_2$ is prohibitively high. Without information sharing, the equilibrium is $q_1  = \frac{3}{7}, q_2 = \frac{2}{7}, \pi_1 = \frac{9}{49}, \pi_2 = \frac{4}{49}$}
 
-{\color{red} math here}
+    \item[2.] If $c_2$ is prohibitively high, then Firm 2 doesn't care about sharing its information because its profit is 0 either way. Otherwise, if $c_2 = 0$, Firm 2 has an incentive to share its cost as $\frac{1}{9} > \frac{4}{49}$ i.e. their profit is higher in the Cournot duopoly equilibrium than the non-sharing equilibrium. 
+    \item[3.] If Firm 2 shares information, then Firm 1's expected profit is $\frac{1}{2} (\frac{1}{4} + \frac{1}{9}) = \frac{13}{72}$. This is less than the expected profit of $\frac{9}{49}$s when information is not shared, so Firm 1 is worse off in information sharing.
+\end{enumerate}
 
 \item[4)]
 
