@@ -18,12 +18,6 @@
 \newtheorem{example}{Example}
 \newcommand{\qed}{\rule{7pt}{7pt}}
 
-\usepackage{times}
-\usepackage{ulem}
-\usepackage[nocenter]{qtree}
-\usepackage{tree-dvips}
-\usepackage{gb4e}
-
 \newcommand{\homework}[4]{
 	\thispagestyle{plain} 
 	\newpage
@@ -78,8 +72,95 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
         \therefore p_2 &= \frac{5a + 8c}{15} \\
         \therefore p_1 &= \frac{5 + 2a}{15}
     \end{align*} 
+
+    Solving for profit given these prices is computationally simple, but mostly straightforward:
+
+    \begin{align*}
+        \pi_1 &= (\frac{5a+2c}{15})(a - 2 (\frac{5 + 2a}{15}) + \frac{5a + 8c}{15}) \\
+        &= (\frac{5a+2c}{15})(\frac{15a}{15} + \frac{-5a + 4c}{15}) \\
+        &= (\frac{5a + 2c}{15})(\frac{10a + 4c}{15}) \\
+        \pi_1 &= \frac{2}{225}(5a + 2c)^2
+    \end{align*}
+
+    \begin{align*}
+        \pi_2 &= (\frac{8c + 5a}{15} - c)(a - 2(\frac{8c + 15a}{15} + \frac{5a + 2c}{15})) \\
+        &= (\frac{5a - 7c}{15})(\frac{15a}{15} + \frac{-14c - 5a}{15}) \\
+        &= (\frac{5a - 7c}{15})(\frac{10a - 14c}{15}) \\
+        \pi_2 &= \frac{2}{225}(5a-7c)^2
+    \end{align*}
+
+    {\color{blue}\textbf{Solution:} $p_1 = \frac{5 + 2a}{15}, p_2 = \frac{5a + 8c}{15}, \pi_1 = \frac{2}{225}(5a + 2c)^2, \pi_2 = \frac{2}{225}(5a-7c)^2$}
     \item[2.] 
-    \item[3.] 
+    
+    \begin{enumerate}
+    
+    \item[(a)] Recall that we solved for Firm 2's reaction function, $p_2 = \frac{2c + a + p_1}{4}$. We can then plug this into Firm 1's profit maximization to find $p_1$ (and thus $p_2$ as follows:
+    
+    \begin{align*}
+        max_{p_1} \pi_1 &= p_1 (a - 2p_1 + \frac{2c + a + p_1}{4}) \\
+        &= p_1 a - 2p_1^2 + \frac{2cp_1 + ap_1 + p_1^2}{4} \\
+        \frac{\partial \pi_1}{\partial p_1} &= a - 4p_1 + \frac{1}{2}c + \frac{1}{4}a + \frac{1}{2}p_1 \\
+        \frac{7}{2}p_1 &= \frac{1}{2}c + \frac{5}{4}c \\
+        p_1 &= \frac{2c + 5a}{14} \\
+        \therefore p_2 &= \frac{2c + a + \frac{2c + 5a}{14}}{4} \\
+        &= \frac{28c + 14a + 2c + 5a}{56} \\
+        p_2 &= \frac{30c + 19a}{56}
+    \end{align*}
+
+    Once again, solving for profit is computationally intensive but quite simple; for levity, only the basic setup and answer are included.
+
+    \begin{align*}
+        \pi_1 &= (\frac{2c + 5a}{14})(a - \frac{4c-10a}{14} + \frac{30c + 19a}{56}) = \frac{1}{112}(2c + 5a)^2 \\
+        \pi_2 &= (\frac{30c + 19a}{56} -c)(a - 2(\frac{30c + 19a}{56}) + \frac{2c + 5a}{14}) = \frac{1}{1568}(19a - 26c)^2
+    \end{align*}
+
+    {\color{blue}\textbf{Solution:} $p_1 = \frac{2c + 5a}{14}, p_2 = \frac{30c + 19a}{56}, \pi_1 = \frac{1}{112}(2c + 5a)^2, \pi_2 = \frac{1}{1568}(19a - 26c)^2$}
+
+    \item[(b)] Recall that we solved for Firm 1's reaction function, $p_1 = \frac{a + p_2}{4}$. Similar to part (a), we plug in that function to Firm 2's profit maximization problem to find prices.
+    
+    \begin{align*}
+        \pi_2 &= (p_2 - c)(a - 2p_2 + \frac{a + p_2}{4}) \\
+        &= (p_2 - c)(1.25a - 1.75p_2) \\
+        \frac{\partial \pi_2}{\partial p_2} &= -1.75(p_2 - c) + (1.25a - 1.75p_2) = 0 \\
+        0 &= -\frac{7}{4} (p_2 -c) + (\frac{5}{4} a - \frac{7}{4} p_2) \\
+        &= -\frac{14}{4} p_2 + \frac{7}{4} c + \frac{5}{4} a \\
+        p_2 &= \frac{5a + 7c}{14} \\
+        \therefore p_1 &= \frac{a + \frac{5a + 7c}{14}}{4} = \frac{19a + 7c}{56}
+    \end{align*}
+
+    Once again, for levity we simply plug prices back into the profit equations to get the values.
+
+    \begin{align*}
+        \pi_1 &= (\frac{19a + 7c}{56})(a - \frac{38a + 14c}{56} + \frac{20a + 28c}{56}) = \frac{1}{1568}(19a + 7c)^2 \\
+        \pi_2 &= \frac{1}{8*14}(5a-7c)^2 = \frac{1}{112}(5a-7c)^2
+    \end{align*}
+
+    {\color{blue}\textbf{Solution:} $p_1 = \frac{19a + 7c}{56}, p_2 = \frac{5a + 7c}{14}, \pi_1 = \frac{1}{1568}(19a + 7c)^2, \pi_2 = \frac{1}{112}(5a-7c)^2$}
+\end{enumerate}
+    \item[3.] For Firm 2 to have a second-mover advantage, its profits as calculated in part (a) must always be greater than part (b). We show that here:
+    \begin{align*}
+        \frac{1}{1568}(19a - 26c)^2 &> \frac{1}{112}(5a-7c)^2 \\
+        \frac{1}{14}(19a - 26c)^2 &> (5a-7c)^2 \\
+        (19a - 26c)^2 &> 14 (5a-7c)^2 \\
+        19a - 26c &> \sqrt{14}(5a-7c) \\
+        19a - 26c &> 5\sqrt{14}a - 7\sqrt{14}c \\
+        (19 - 5\sqrt{14})a - (7\sqrt{14}-26)c &> 0
+    \end{align*} 
+
+    Since we know that $c<\frac{5}{7}a$, and $c$ can never be negative, this inequality always holds. Therefore, Firm 2 always has a second-mover advantage. $\qed$
+
+    Next, we calculate where Firm 1 has an advantage by also comparing profits - Firm 1 has a first-mover advantage whenever the following inequality holds:
+    \begin{align*}
+        \frac{1}{112}(2c + 5a)^2 &> \frac{1}{1568}(19a + 7c)^2 \\
+        14(2c + 5a)^2 &> (19a + 7c)^2 \\
+        2\sqrt{14}c + 5\sqrt{14}a &> 19a + 7c \\
+        (2\sqrt{14} - 7)c + (5\sqrt{14} - 19)a &> 0 \\
+        (2\sqrt{14} - 7)c &> (19 - 5\sqrt{14})a \\
+        c &> \frac{19 - 5\sqrt{14}}{2\sqrt{14}-7} a \\
+        c &> 0.604a
+    \end{align*}
+
+    Therefore, Firm 1 has a first-mover advantage when $c > 0.604a$. Note that since $c<\frac{5}{7}a$ must also hold, but $\frac{5}{7} \approx 0.714$ so this is fine. $\qed$
 \end{enumerate}
 
 \item[4.3)] 
