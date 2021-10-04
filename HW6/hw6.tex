@@ -54,9 +54,44 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 	
 \item[1.] 
 
-\item[2.]
+\begin{enumerate}
+	\item Firms on the competitive fringe are price-takers, so they take $P$ as given and produce a quantity where $MC=P$. In this case, $P = MC = 10 + 50q_i$, so an individual fringe firm will produce $q_i = \frac{1}{50}P - \frac{1}{10}$. Since there are 100 firms, the total supply for the competitive fringe $Q_f = 100 q_i = 2P - 20$. Note that this only holds if $P>10$, as otherwise this model implies that firms would produce a negative quantity (when in reality they would shut down and produce nothing).
+	
+	{\color{blue}\textbf{Solution:} The supply curve for the competitive fringe is $Q_f = 2P-20$ where $P > 10$, otherwise 0.}
+	\item To solve for residual demand, all we need to do is take market demand $Q_m = 400 - 8P$ and subtract $Q_f$ from it. Since the residual demand is the demand for the dominant firm, we will call it $Q_d = 400 - 8P - (2P - 20) = 420 - 10P$.
+	{\color{blue}\textbf{Solution:} Residual demand faced by the dominant firm is $Q_d = 420 - 10P$}
+	\item Given the residual demand, we can simply solve this like any other monopolist problem, where the objective is to maximize the dominant firm's profit $\pi_d$ by setting price:
+	\begin{align*}
+		max p \pi_d &= (420-10P)(P -10) \\
+		\frac{\partial\pi}{\partial p} &= (420-10P) + (-10)(P - 10) \\
+		0 &= 420-10P-10P+100 \\
+		P &= 520 / 20 = 26
+	\end{align*}
+	Now that we know $P$, we can solve for everything else quite trivially; $Q_d = 420 - 10(26) = 160, Q_f = 2(26) - 20 = 32$, and the market shares for the dominant firm and the fringe are $\frac{160}{160 + 32} = \frac{5}{6}$ and $\frac{1}{6}$ respectively.
 
-\item[3.]
+	{\color{blue}\textbf{Solution:} $P = 26, Q_d = 160, Q_f = 32$, and market shares for dominant firm and fringe are $\frac{5}{6}$ and $\frac{1}{6}$ respectively.}
+	\item Recall that $Q_d = 420 - 10P$, or equivalently, $P = 42 - \frac{1}{10}Q$. Considering that now $Q$ is equal to $q_1 + q_2$ (the combined total that firms 1 and 2 produce), we can solve for both firms' profit-maximizing quantity via symmetry:
+	\begin{align*}
+		max_{q_1} \pi_1 &= (P - c)(q_1) \\
+		&= (42 - \frac{1}{10}q_1 - \frac{1}{10}q_2 - 10)(q_1) \\
+		\frac{\partial \pi_1}{\partial q_1} &= 32 - \frac{2}{10}q_1 - \frac{1}{10}q_2 = 0 \\
+		q_1 &= \frac{10}{2} (32 - \frac{1}{10}q_2) \\
+		&= 160 - \frac{1}{2}q_2 \\
+		\therefore q_2 &= 160 - \frac{1}{2}q_1 \\
+		\therefore q_1 &= 160 - \frac{1}{2}(160 - \frac{1}{2}q_1) \\
+		&= 80 + \frac{1}{4}q_1 \\
+		q_1 = q_2 &= \frac{4}{3} *80 = \frac{320}{3} \\
+		\therefore Q_d &= \frac{640}{3} \approx 213.33
+	\end{align*}
+
+	Plugging into the inverse residual demand function, we get $P = 42 - \frac{1}{10} * \frac{640}{3} = \frac{126 - 64}{3} = \frac{62}{3} \approx 20.667$. Recalling the fringe demand $Q_f = 2P-20$, we can see that $Q_f = \frac{124}{3} - \frac{60}{3} = \frac{64}{3} \approx 21.333$. Fringe market share is $\frac{64}{3} / \frac{64 + 640}{3} = \frac{1}{11}$.
+
+	{\color{red}NOTE: posted solutions technically don't line up with this but I'm pretty sure there's a typo. Waiting on response from prof}
+
+	{\color{blue}\textbf{Solution:} In Cournot, $q_1 = q_2 = \frac{320}{3} \therefore Q_d = \frac{640}{3} \approx 213.333$ setting market price to $P=\frac{62}{3} \approx 20.667$, fringe produces $Q_f = \frac{64}{3} \approx 21.333$ achieving a market share of $\frac{1}{11}$ to the duopoly's market share of $\frac{10}{11}$.}
+\end{enumerate}
+
+\item[2.]
 
 
 \end{enumerate}
