@@ -93,6 +93,37 @@ Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
 
 \item[2.]
 
+\begin{enumerate}
+	\item Let $q_1$ and $q_2$ refer to $X$ and $Y$ as defined in the problem, and $Q$ to represent the combined total produced. We then solve for the quantities produced by maximizing firm 1's profit function (which will give us both quantities via symmetry):
+	\begin{align*}
+		max_{q_1} \pi_1 &= (280 - 2q_1 - 2q_2 - 40)*q_1 \\
+		\frac{\partial\pi_1}{\partial q_1} &= 240 - 4q_1 - 2q_2 = 0 \\
+		q_1 &= 60 - \frac{1}{2}q_2 \\
+		\therefore q_2 &= 60 - \frac{1}{2}q_1 \\
+		\therefore q_1 &= 60 - \frac{1}{2}(60 - \frac{1}{2}q_1) \\
+		&= 30 + \frac{1}{4}q_1 \\
+		\therefore q_1 &= 40 \\
+		\therefore q_2 &= 60 - 40/2 = 40
+	\end{align*}
+
+	Solving for $P$ and then profits is simply a matter of plugging in the solved quantities: $P=280 - 2(40+40) = 120, \pi_1 = \pi_2 = (120-40)(40) = 3200$.
+
+	{\color{blue} \textbf{Solution:} In Cournot equilibrium, $q_1 = q_2 = 40, P=120, \pi_1=\pi_2 = 3200$.}
+
+	\item From part (a), we already know firm 2's reaction function $q_2 = 60 - \frac{1}{2}q_2$. Only firm 1's reaction function changes here, and we solve for it as such:
+	\begin{align*}
+		max_{q_1} \pi_1 &= (280 - 2q_1 - 2(60 - \frac{1}{2}q_2) - 40)*q_1 \\
+		&= (120-q_1)(q_1) \\
+		\frac{\partial\pi_1}{\partial q_1} &= 120 - 2q_1 = 0 \\
+		\therefore q_1 &= 60 \\
+		\therefore q_2 &= 60 - 60/2 = 30
+	\end{align*}
+
+	We then use these quantities to solve for $P$ and profits: $P = 280 - 2(60 + 30) = 100, \pi_1 = (100-40)(60) = 3600, \pi_2 = (100-40)(30) = 1800$
+
+	{\color{blue}\textbf{Solution:} In Stackelberg equilibrium with firm 1 choosing first, $q_1 = 60, q_2 = 30, P = 100, \pi_1 = 3600, \pi_2 = 1800$}
+\end{enumerate}
+
 
 \end{enumerate}
 	
