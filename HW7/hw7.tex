@@ -1,0 +1,281 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{graphicx,amssymb,amsmath,bm,color,multicol}
+\usepackage{../newcommand}
+\sloppy
+\newcommand{\ignore}[1]{}
+
+\newenvironment{proof}{\noindent{\bf Proof:}}{\qed\bigskip}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma} 
+\newtheorem{claim}{Claim}
+\newtheorem{fact}{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{observation}{Observation}
+\newtheorem{example}{Example}
+\newcommand{\qed}{\rule{7pt}{7pt}}
+
+\newcommand{\homework}[4]{
+	\thispagestyle{plain} 
+	\newpage
+	\setcounter{page}{1}
+	\noindent
+	\begin{center}
+		\framebox{ \vbox{ \hbox to 6.28in
+				{\bf ECON 4190: Industrial Organization \hfill #1} %change course name
+				\vspace{4mm}
+				\hbox to 6.28in
+				{\hspace{2.5in}\large\mbox{Homework #2}}
+				\vspace{4mm}
+				\hbox to 6.28in
+				{{\it Collaborators: #3\hfill}}
+			}}
+		\end{center}
+	}
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+% Modify this command to be your name and computing ID
+\homework{Fall 2021}{$7$}{Alex Shen (as5gd), Max Bresticker (mtb9sex)}
+
+Pledge: On my honor, I pledge that I have neither given nor received help on this assignment 
+Signature: \textit{Alex Shen, Sean Velhagen, Max Bresticker}
+
+\begin{enumerate}
+	
+\item[5.1] Since we are assuming that the market is fully covered, every consumer will either receive utility $v_1 = r - \tau_1(x) - p_1$ or $v_2 = r - \tau_2 (1-x) - p_2$.
+
+\begin{enumerate}
+	\item[1.]
+	\begin{enumerate}
+		\item[(a)] The indifferent consumer is defined by their location a $\hat{x}$, where $v_1(\hat{x}) = v_2(\hat{x})$. We solve for $\hat{x}$ as follows:
+		\begin{align*}
+			r - t\hat{x} - p_1 &= r - (t + \tau)(1-\hat{x}) - p_2 \\
+			p_2 - p_1 &= t\hat{x} - (t + \tau)(1 -\hat{x}) \\
+			p_2 - p_1 &= t\hat{x} - (t - t\hat{x} + \tau - \tau \hat{x})\\
+			p_2 - p_1 + t + \tau &= \hat{x} (2t + \tau) \\
+			\hat{x} &= \frac{p_2 - p_1 + t + \tau}{2t + \tau}
+		\end{align*}
+
+		\solution{The indifferent consumer is located at $\frac{p_2 - p_1 + t + \tau}{2t + \tau}$.} 
+		\item[(b)] 
+		Note that since the problem has been reduced to being uniformly distributed along a continuum of length 1, the quantities sold for Won-Ton and Too-Chow can be represented as simply $\hat{x}$ and $1-\hat{x}$ respectively, and all values in our final answers are in units of 100,000. We maximize their profits ($\pi_1$ and $\pi_2$ respectively) with respect to their prices to determine their reaction functions as follows:
+
+		\begin{align*}
+			max_{p_1} \pi_1 &= p_1 * \hat{x} = p_1 (\frac{p_2 - p_1 + t + \tau}{2t + \tau}) \\
+			\frac{\partial\pi_1}{\partial p_1} =  0 &= \frac{-p_1}{2t + \tau} + \frac{p_2 - p_2 + t + \tau}{2t + \tau} \\
+			&= \frac{p_2 - 2p_1 + t + \tau}{2t + \tau} \\
+			\therefore p_1^* &= \frac{p_2 + t + \tau}{2} \\
+			max_{p_2} \pi_2 &= p_2 * (1-\hat{x}) = p_2 (1 - \frac{p_2 - p_1 + t + \tau}{2t + \tau}) \\
+			&= p_2 (\frac{2t + \tau - p_2 + p_1 - t - \tau}{2t + \tau}) = p_2(\frac{p_1 - p_2 +t}{2t + \tau}) \\
+			\frac{\partial\pi_2}{\partial p_2} =  0 &= \frac{-p_2}{2t + \tau} + \frac{p_1 - p_2 + t}{2t + \tau} \Rightarrow p_2^* = \frac{p_1 + t}{2}
+		\end{align*}
+
+		Given these functions, we then simply solve the system of equations to find $p_1^*$ and $p_2^*$, which we then plug back into the profit functions:
+
+		\begin{align*}
+			p_2^* &= \frac{p_1^* + t}{2} = \frac{\frac{p_2^* + t + \tau}{2} + t}{2} \\
+			4p_2^* &= p_2^* + t + \tau + 2t \Rightarrow 3p_2^* = 3t + \tau \\
+			\therefore p_2^* &= t + \frac{1}{3}\tau \Rightarrow p_1^* = t + \frac{2}{3}\tau \\
+			\pi_1 &= (t + \frac{2}{3}\tau) (\frac{t + \frac{2}{3}\tau}{2t + \tau}) = \frac{(3t + 2\tau)^2}{9 (2t + \tau)} \\
+			\pi_2 &= (t + \frac{1}{3}\tau)(\frac{(t + \frac{1}{3} \tau)}{2t + \tau}) = \frac{(3t + \tau)^2}{9(2t + \tau)}
+		\end{align*}
+
+		\solution{$p_1^* = t + \frac{2}{3}\tau, p_2^* = t + \frac{1}{3}\tau, \pi_1 = \frac{(3t + 2\tau)^2}{9 (2t + \tau)}, \pi_2 = \frac{(3t + \tau)^2}{9(2t + \tau)}$}
+
+		\item[(c)] 
+		We can prove this simply by taking the derivative of $\pi_2$ with respect to $\tau$:
+		\begin{align*}
+			\frac{\partial\pi_2}{\partial\tau} = \frac{\partial}{\partial \tau}\frac{(3t + \tau)^2}{9(2t + \tau)} &= \frac{(t+\tau)(3t + \tau)}{9(2t + \tau)^2}
+		\end{align*} 
+
+		It is easily seen here that this value is always positive for any values of $t$ and $\tau$ above 0, which should basically always hold. Intuitively, this makes sense because $\tau$ is a measure of the level of horizontal differentiation between the firms, so as it increases, Won-Ton and Too-Chow are less directly in competition so they can each charge higher prices.
+	\end{enumerate}
+
+	\item[2.] Note that now, $v_1 = r - tx - p_1$ (as before) and  $v_2 = r - t(1-x) - f - p_2$.
+	\begin{enumerate}
+		\item[(a)] Once again, we solve for the indifferent consumer at $\hat{x}$, where $v_1(\hat{x}) = v_2(\hat{x})$.
+		\begin{align*}
+			r - t\hat{x} - p_1 &= r - t(1-\hat{x}) - f - p_2 \\
+			p_2 - p_1 &= t\hat{x} - t - f + t\hat{x} \\
+			\hat{x} &= \frac{p_2 - p_1 + t + f}{2t}
+		\end{align*} 
+		
+		\solution{The indifferent consumer is located at $\frac{p_2 - p_1 + t + f}{2t}$.}
+		\item[(b)] Once again, we maximize the profit functions to find reaction function prices:
+		 \begin{align*}
+			 max_{p_1} \pi_1 &= p_1 (\frac{p_2 - p_1 + t + f}{2t}) \\
+			\frac{\partial\pi_1}{\partial p_1}= 0  &= \frac{-p_1}{2t} + \frac{p_2 - p_1 + t + f}{2t} \Rightarrow p_1^* = \frac{p_2 + t + f}{2} \\
+			max_{p_2} \pi_2 &= p_2 (1 - \hat{x}) = p_2 (\frac{p_1 - p_2 + t - f}{2t}) \\
+			\frac{\partial\pi_2}{\partial p_2} = 0&= \frac{-p_2}{2t} + \frac{p_1 - p_2 + t - f}{2t} \Rightarrow p_2^* =  \frac{p_1 + t - f }{2} \\
+		 \end{align*}
+		 We then solve the resulting system of equations, then plug the derived prices into the profit functions:
+		 \begin{align*}
+			p_1^* &= \frac{\frac{p_1 + t - f }{2} + t + f}{2} \Rightarrow 4p_1^* = p_1^* + t - f + 2t + 2f \Rightarrow p_1^* = t + \frac{1}{3}f \\
+			\therefore p_2^* &= \frac{t + \frac{1}{3}f + t - f}{2} = t - \frac{1}{3}f \\
+			\pi_1 &= (t + \frac{1}{3}f)(\frac{t + \frac{1}{3}f}{2t}) = \frac{(3t+f)^2}{18t} \\
+			\pi_2 &= (t - \frac{1}{3}f)(\frac{t-\frac{1}{3}t}{2t}) = \frac{(3t-f)^2}{18t}
+		 \end{align*}
+
+		 \solution{$p_1 = t + \frac{1}{3}f, p_2 = t - \frac{1}{3}f, \pi_1 = \frac{(3t+f)^2}{18t}, \pi_2 = \frac{(3t-f)^2}{18t}$}
+
+		 \item[(c)] For $p_2^* > 0$ to hold, it must be that $3t > f$.
+		 \item[(d)] To prove this, we take the derivative of $pi_2$ with respect to $f$. 
+		 \begin{align*}
+			 \frac{\partial\pi_2}{\partial f} &= \frac{\partial}{\partial f} \frac{(3t-f)^2}{18t} = \frac{1}{18t} * -1 * 2(3t-f) \\
+			 &= -\frac{1}{9t}(3t-f)
+		 \end{align*}
+
+		 Note we earlier showed that $3t > f$, so this value must always be negative. Intuitively, this is because any positive value of $f$ will reduce the value a consumer gets from buying from Too-Chow i.e. $f$ vertically differentiates the firms by reducing the quality of Too-Chow's soup. The reverse is true as well, which explains why a decrease in $f$ will increase $\pi_2$. This is different from 1c, where $\tau$'s effect on $v_2$ was $(1-\hat{x})$, which is guaranteed to be positive.
+	\end{enumerate} 
+
+	\item[3.]
+	\begin{enumerate}
+		\item[(a)]
+		Compare $\pi_2$ before and after the escalator is installed:
+		\begin{align*}
+			diff &= \pi_2^{pre-1993} - \pi_2^{post-1993} \\ 
+			&= \frac{(3t+\tau)^2}{9(2t+\tau)}- \frac{9t^2}{18t} \\
+			&= \frac{2(9t^2+6t\tau + \tau^2) - (18t^2 + 9t\tau)}{18(2t+\tau)} \\
+			&= \frac{2\tau^2 + 3\tau t}{18(2t+\tau)} > 0
+		\end{align*} 
+		We know that $t, \tau > 0$ so we can conclude that Too-Chow's profit after the escalators are installed is lower than it was before. This is because the escalator makes traveling between stores easier, resulting in more price competition and thus lower profits.
+		\item[(b)] 
+		Compare $\pi_1$ before and after the escalator is installed:
+		\begin{align*}
+			diff(\tau) &= \pi_1^{post-1993} - \pi_1^{pre-1993} |_{t=2, f=3} \\
+			&= \frac{9^2}{36} - (\frac{(6+2\tau)^2}{9(4 + \tau)}) \\
+			&= \frac{9}{4} - \frac{(6+2\tau)^2}{9(4 + \tau)}
+		\end{align*}
+
+		Note that $diff(2) = \frac{9}{4} - \frac{100}{54} \approx 0.398$, indicating that Won-Ton does better when the cost of climbing the stairs was relatively small, and $diff(4) = \frac{9}{4} - \frac{196}{72} \approx -0.472.$, indicating the opposite when the cost was higher. This is because the installation of an escalator gives Won-Ton a price advantage (as all else equal, all of Too-Chow's customers have to pay a higher price regardless of distance) but also reduces differentiation between the shops, resulting in stronger price competition.
+	\end{enumerate}
+\end{enumerate} 
+
+
+\item[5.2]
+\begin{enumerate}
+	\item[1.] We begin by solving for the indifferent consumer of type $\hat{\theta}$, where $v_1(\hat{\theta}) = v_2(\hat{\theta})$.
+	\begin{align*}
+		r - p_1 + \hat{\theta}s_1 &= r - p_2 + \hat{\theta}s_2 \\
+		p_2 - p_1 &= s_2\hat{\theta} - s_1\hat{\theta} \\
+		\hat{\theta} = \frac{p_2 - p_1}{s_2 - s_1}
+	\end{align*} 
+	 
+	Using this, we maximize firms 1 and 2's profits knowing $MC_i = \alpha s_i$ and that the quantity for each is equal to everything on its side of $\hat{\theta}$ e.g. $Q_1 = \hat{\theta} - \ubar{\theta}$:
+	\begin{align*}
+		max_{p_1} \pi_1 &= (p_1 - \alpha s_1)(\frac{p_2 - p_1}{s_2 - s_1} - \ubar{\theta}) \\
+		\frac{\partial\pi_1}{\partial p_1} = 0&= \frac{-p_1 + \alpha s_1}{s_2 - s_1} + \frac{p_2 - p_1}{s_2 - s_1} \\
+		&= \frac{p_2 - 2p_1 + \alpha s_1}{s_2 - s_1} - \ubar{\theta} 
+		\Rightarrow p_1^* = \frac{p_2 + \alpha s_1}{2} - \frac{\ubar{\theta} (s_2 - s_1)}{2} \\
+		max_{p_2} \pi_2 &= (p_2 - \alpha s_2)(\bar{\theta} - \hat{\theta}) = (p_2 - \alpha s_2)(\bar{\theta} + \frac{p_1 - p_2}{s_2 - s_1}) \\ 
+		\frac{\partial \pi_2}{\partial p_2} = 0 &= \frac{\alpha s_2 - p_2}{s_2 - s_1} + \bar{\theta} + \frac{p_1 - p_2}{s_2 - s_1} = \frac{\alpha s_2 - 2p_2 + p_1}{s_2-s_1} + \bar{\theta} \\
+		\therefore p_2^* &= \frac{\alpha s_2 + p_1}{2} + \frac{1}{2} \bar{\theta}(s_2-s_1) \\
+	\end{align*}
+	Solving the subsequent system of equation is simple but computationally intensive; the setup and result are provided here, with intermediate steps skipped.
+	\begin{align*}
+		p_2^* &= \frac{\alpha s_2 + (\frac{p_2 + \alpha s_1}{2} - \frac{\ubar{\theta} (s_2 - s_1)}{2})}{2} + \frac{1}{2} \bar{\theta}(s_2-s_1)	\\
+		\therefore p_2^* &= \frac{1}{3}\alpha(2s_2 + s_1) + \frac{1}{3}(s_2 - s_1)(2\bar{\theta} - \ubar{\theta}) \\
+		p_1^* &= \frac{\frac{\alpha s_2 + p_1}{2} + \frac{1}{2} \bar{\theta}(s_2-s_1) + \alpha s_1}{2} - \frac{\ubar{\theta} (s_2 - s_1)}{2} \\
+		\therefore p_1^* &= \frac{1}{3}\alpha(2s_1 + s_2) + \frac{1}{3}(s_2 -s_1)(\bar{\theta} - 2\ubar{\theta})
+	\end{align*}
+
+	We then plug back in prices to our equation for $\hat{\theta}$ to determine the specific location of the indifferent consumer and thus the quantities for each firm. We then plug these quantities into the Once again, only the setups and conclusions are shown for brevity.
+	\begin{align*}
+		\hat{\theta} &= \frac{\frac{1}{3}\alpha(2s_2 + s_1) + \frac{1}{3}(s_2 - s_1)(2\bar{\theta} - \ubar{\theta}) - (\frac{1}{3}\alpha(2s_1 + s_2) + \frac{1}{3}(s_2 -s_1)(\bar{\theta} - 2\ubar{\theta}))}{s_2 - s_1} \\
+		\hat{\theta} &= \frac{1}{3} (\alpha + \bar{\theta} + \ubar{\theta}) \\
+		q_1 &= \hat{\theta} - \ubar{\theta} = \frac{1}{3} (\alpha + \bar{\theta} - 2\ubar{\theta}) \\
+		q_2 &= \bar{\theta} - \hat{\theta} = \frac{1}{3} (2\bar{\theta} - \ubar{\theta} - \alpha) \\
+		\pi_1 &= q_1 (p-c) = \hat{\theta} - \ubar{\theta} = \frac{1}{3} (\alpha + \bar{\theta} - 2\ubar{\theta}) * [\frac{1}{3}\alpha(2s_1 + s_2) + \frac{1}{3}(s_2 -s_1)(\bar{\theta} - 2\ubar{\theta}) - (\alpha s_1)] \\ 
+		&= \frac{1}{9}(s_2 - s_1)(\alpha + \bar{\theta} - 2\ubar{\theta})^2 \\
+		\pi_2 &= \frac{1}{3} (2\bar{\theta} - \ubar{\theta} - \alpha) * [\frac{1}{3}\alpha(2s_2 + s_1) + \frac{1}{3}(s_2 - s_1)(2\bar{\theta} - \ubar{\theta}) - (\alpha s_2)] \\
+		&= \frac{1}{9}(s_2 - s_1)(2\bar{\theta} - \ubar{\theta} - \alpha)^2
+	\end{align*}
+
+	\solution{$p_1^* = \frac{1}{3}\alpha(2s_1 + s_2) + \frac{1}{3}(s_2 -s_1)(\bar{\theta} - 2\ubar{\theta}), p_2^* = \frac{1}{3}\alpha(2s_2 + s_1) + \frac{1}{3}(s_2 - s_1)(2\bar{\theta} - \ubar{\theta}), q_1 = \hat{\theta} - \ubar{\theta} = \frac{1}{3} (\alpha + \bar{\theta} - 2\ubar{\theta}), q_2 = \bar{\theta} - \hat{\theta} = \frac{1}{3} (2\bar{\theta} - \ubar{\theta} - \alpha), \pi_1 = \frac{1}{9}(s_2 - s_1)(\alpha + \bar{\theta} - 2\ubar{\theta})^2, \pi_2 = \frac{1}{9}(s_2 - s_1)(2\bar{\theta} - \ubar{\theta} - \alpha)^2$}
+
+	\item[2.]
+	\begin{enumerate}
+		\item[(a)] Using our previously-determined reaction functions $p_1(s_1, s_2)$ and $p_2(s_1, s_2)$, we can profit maximize with respect to $s_i$:
+		\begin{align*}
+			max_{s_1} \pi_1 &= (p_1(s_1, s_2) - \alpha s_1) * q_1 \\
+			\frac{\partial \pi_1}{\partial s_1}= 0 &=  (\frac{\partial p_1}{\partial s_1} - \alpha) * q_1 + (p_1(s_1, s_2) - \alpha s_1) * \frac{\partial q_1}{\partial s_1} \\
+			&= (\frac{2}{3}\alpha - \frac{1}{3}(\bar{\theta} - 2\ubar{\theta}) - \alpha) * q_1 + 0 \\ 
+			0 &= (-\frac{1}{3}\alpha -\frac{1}{3}(\bar{\theta} - 2\ubar{\theta}))*q_1
+		\end{align*}
+	
+		Note that this equation cannot hold, as $q_1>0$ for an interior solution and $\alpha, \bar{\theta}, \ubar{\theta}$ all must be positive (if all values were zero, there would be no profit, and thus nobody would produce). As such, we use the corner solution of $(\ubar{\theta}, \bar{\theta})$ (since $s_1$ is defined as being less than $s_1$, $(\bar{\theta}, \ubar{\theta})$ is not a valid equilibrium). This can also be seen intuitively, as both firms' profits are increasing in $(s_2 - s_1)$, so they have an incentive to maximize the difference between their quality levels.
+		\item[(b)]
+		If we look at the price, quantity, and profit equations we derived earlier, the effect of $\alpha$ becomes clear. For firm 1 (lower quality), increasing $\alpha$ will increase price, increase quantity, and increase profit. For firm 2 (higher quality), increasing $\alpha$ will increase price, decrease quantity, and decrease profit. Intuitively, this is because increasing $\alpha$ means that the cost of producing quality is higher; this will cause the prices of both firms to increase as their overall per-unit cost will both increase by some amount, but the higher quality firm will incur a higher cost increase.
+	\end{enumerate} 
+
+\end{enumerate} 
+
+\item[5.3]
+\begin{enumerate}
+	\item[1.]
+	As always, we start by finding the location of the indifferent consumer at $\hat{x}$ where $v_1(\hat{x}) = v_2(\hat{x})$. Given $M=1$, this directly gives us $q_1$ and $q_2$. 
+	\begin{align*}
+		(r-t\hat{x})s_A - p_A &= (r - t(1-\hat{x}))s_B - p_B \\
+		rs_A - ts_A\hat{x} - p_A &= rs_B - ts_B + t\hat{x}s_B - p_B \\
+		p_B - rs_B + ts_B + rs_A - p_A &= ts_A\hat{x} + ts_B\hat{x} \\
+		q_A &= \hat{x} = \frac{p_B - p_A + r(s_A - s_B) + ts_B}{ts_A + ts_B} \\
+		q_B &= 1 - \hat{x} = \frac{ts_A + p_A - p_B - r(s_A - s_B)}{ts_A + ts_B}
+	\end{align*}
+	\solution{$q_A = \frac{p_B - p_A + r(s_A - s_B) + ts_B}{ts_A + ts_B}, q_B = \frac{ts_A + p_A - p_B - r(s_A - s_B)}{ts_A + ts_B}$}
+	\item[2.] 
+	We solve this problem with the standard profit maximization:
+	\begin{align*}
+		max_{p_A} \pi_A &= (p_A - 0) * \frac{p_B - p_A + r(s_A - s_B) + ts_B}{ts_A + ts_B} \\
+		\frac{\partial \pi_A}{\partial p_A} = 0 &= p_A * \frac{-1}{ts_A + ts_B} + \frac{p_B - p_A + r(s_A - s_B) + ts_B}{ts_A + ts_B} \\
+		\therefore p_A &= \frac{p_B + r(s_A - s_B) + ts_B}{2} \\
+		max_{p_B} \pi_B &= (p_B - 0) * \frac{ts_A + p_A - p_B - r(s_A - s_B)}{ts_A + ts_B} \\
+		\frac{\partial \pi_B}{\partial p_B} = 0 &= p_B * \frac{-1}{ts_A + ts_B} + \frac{ts_A + p_A - p_B - r(s_A - s_B)}{ts_A + ts_B} \\
+		\therefore p_B &= \frac{p_A - r(s_A - s_B) + ts_A}{2}
+	\end{align*}
+
+	Solve the system of equations:
+	\begin{align*}
+		p_B &= \frac{\frac{p_B + r(s_A - s_B) + ts_B}{2} - r(s_A - s_B) + ts_A}{2} \\
+		4p_B &= p_B + r(s_A - s_B) + ts_B - 2r(s_A-s_B) + 2ts_A \\
+		\therefore p_B &= \frac{1}{3} (r(s_B - s_A) + ts_B + 2ts_A) \\
+		p_A &= \frac{\frac{p_A - r(s_A - s_B) + ts_A}{2} + r(s_A - s_B) + ts_B}{2} \\
+		4p_A &= p_A - r(s_A - s_B) + ts_A + 2r(s_A -s_B) + 2ts_B \\
+		\therefore p_A &= \frac{1}{3} (r(s_A - s_B) + ts_A + 2ts_B)
+	\end{align*}
+
+	\solution{$p_A = \frac{1}{3} (r(s_A - s_B) + ts_A + 2ts_B), p_B = \frac{1}{3} (r(s_B - s_A) + ts_B + 2ts_A), \pi_1 = p_A * q_A, \pi_2 = p_B * q_B$}
+
+	\item[3.]
+	When $s_A = s_B = s$, the functions we derived previously reduce significantly - $p_A = p_B = ts$, and $q_A = q_B = \frac{s - s + ts}{2ts} = \frac{1}{2}$. This means both of their profit functions reduce to $\pi_A = \pi_B = \frac{1}{2}ts - C(s)$. Maximizing this equation is very easy; $pi_i$ is maximized when $\frac{1}{2}t = \frac{\partial C(s)}{\partial s}$.
+	\item[4.] First we solve the standard quality-augmented Hotelling model:
+	\begin{align*}
+		r + s_A - t\hat{x} - p_A &= r + s_B - t + t\hat{x} - p_B \\
+		s_A - s_B - p_A + p_B + t&= 2t\hat{x} \\
+		q_A &= \hat{x} = \frac{s_A -s_B + p_B - p_A}{2t} + \frac{1}{2} \\
+		q_B &= 1 - \hat{x} = \frac{1}{2} + \frac{s_B - s_A + p_A - p_B}{2t}
+	\end{align*} 
+	\begin{align*}
+		max_{p_A} \pi_A &^= p_A * (\frac{s_A -s_B + p_B - p_A}{2t} + \frac{1}{2}) \\
+		\frac{\partial \pi_A}{\partial p_A} - 0 &= \frac{-p_A}{2t} + (\frac{s_A -s_B + p_B - p_A}{2t} + \frac{1}{2}) \\
+		\therefore p_A &= \frac{s_A - s_B + p_B + t}{2} \\
+		via\ symmetry,\ p_B &= \frac{s_B - s_A + p_A + t}{2} \\
+		&= \frac{s_B - s_A + \frac{s_A - s_B + p_B + t}{2} + t}{2} \\
+		4p_B &= 2s_B - 2s_A + s_A - s_B + p_B + t + 2t \\
+		p_B &= \frac{s_B - s_A}{3} + t \Rightarrow p_A = \frac{s_A - s_B}{3} + t
+	\end{align*}
+	Unlike in our work derived in part 3, here if $s_A = s_B = s$, both firms will always only charge $t$ and produce a quantity of $\frac{1}{2}$. Quality thus has no effect on profits, so the particular level of $s$ in this model doesn't matter.
+\end{enumerate}
+
+\end{enumerate}
+	
+\end{document}
