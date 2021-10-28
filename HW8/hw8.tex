@@ -52,11 +52,116 @@ Signature: \textit{Alex Shen, Max Bresticker}
 
 \begin{enumerate}
 	
-\item[1.] 
+\item[1)] We take equilibrium quantities, prices, and advertising as given to be the following:
+\begin{align*}
+	Q_1 &= \lambda_1 [(1 - \lambda_2) + \lambda_2 \frac{1}{2\tau}  (\tau - p_1 + p_2)] \\
+	p_1^* = p_2^* = p^* &= c + \sqrt{2a\tau} \\
+	\lambda_1^* = \lambda_2^* = \lambda^* &= \frac{2}{1 + \sqrt{\frac{2a}{\tau}}}
+\end{align*} 
 
-\item[2.]
+We first plug in prices and advertising to solve for $Q_1$ (which will give us $Q_2$ as well via symmetry):
 
-\item[3.]
+\begin{align*}
+	Q_1 &= \lambda [(1 - \lambda) + \lambda * \frac{\tau}{2\tau}] = \lambda (1 - \frac{\lambda}{2}) \\
+	&= \frac{2}{1 + \sqrt{\frac{2a}{\tau}}} (1 - \frac{1}{2} * \frac{2}{1 + \sqrt{\frac{2a}{\tau}}}) \\
+	&= \frac{2}{1 + \sqrt{\frac{2a}{\tau}}} * \frac{\sqrt{\frac{2a}{\tau}}}{1 + \sqrt{\frac{2a}{\tau}}} \\
+	&= \frac{2\sqrt{\frac{2a}{\tau}}}{(1 + \sqrt{\frac{2a}{\tau}})^2}
+\end{align*}
+
+Then we plug everything into the profit equation (recall that $A(\lambda) = \frac{a}{2}\lambda^2$):
+\begin{align*}
+	\pi_1 &= (p_1 - c)Q_1 - A(\lambda_1) \\
+	&= (c + \sqrt{2a\tau} - c) * (\frac{2\sqrt{\frac{2a}{\tau}}}{(1 + \sqrt{\frac{2a}{\tau}})^2}) - [\frac{a}{2} * (\frac{2}{1 + \sqrt{\frac{2a}{\tau}}})^2] \\
+	&= \sqrt{2a\tau} * \frac{2\sqrt{\frac{2a}{\tau}}}{(1 + \sqrt{\frac{2a}{\tau}})^2} - \frac{2a}{(1 + \sqrt{\frac{2a}{\tau}})^2} \\
+	&= \frac{4a - 2a}{(1 + \sqrt{\frac{2a}{\tau}})^2} = \frac{2a}{(1 + \sqrt{\frac{2a}{\tau}})^2} = \pi_1 = \pi_2
+\end{align*}
+
+\solution{$\pi_1 = \pi_2 = \frac{2a}{(1 + \sqrt{\frac{2a}{\tau}})^2}$}
+
+\item[2)]
+\begin{enumerate}
+	\item 
+	We start the same way we would normally: by solving for the indifferent consumer.
+\begin{align*}
+	v_B = v_T = r + \lambda_B - \hat{x} &= r + \lambda_T - (1-\hat{x}) \\
+	\lambda_B - \lambda_T + 1 &= 2\hat{x} \Rightarrow \hat{x} = \frac{\lambda_B - \lambda_T + 1}{2}\\
+	\therefore q_1 &= \frac{\lambda_B - \lambda_T + 1}{2}; q_2 = 1 - \hat{x} = \frac{\lambda_T - \lambda_B + 1}{2}
+\end{align*}
+
+We then maximize B's objective function, which will also give us T's optimal $\lambda$ via symmetry:
+\begin{align*}
+	 max_{\lambda_B} \pi_B &= \frac{\lambda_B - \lambda_T + 1}{2} - \frac{a}{2}\lambda_B^2 \\
+	 \frac{\partial\pi_B}{\partial\lambda_B} = 0 &= \frac{1}{2} - a \lambda_B \\
+	 \therefore \lambda_B &= \frac{1}{2a} = \lambda_T
+\end{align*}
+
+\solution{In Nash equilibrium, both firms will choose to advertise $\lambda = \frac{1}{2a}$. Plugging this into our equation for $q_i$, it becomes clear that each candidate will receive exactly half of the votes. Interestingly, if advertising is banned, both candidates will have to stop advertising (i.e. $\lambda = 0$), but the result would be unchanged - they would still each receive exactly half of the votes!}
+
+\item Once again, we start by finding the indifferent consumer:
+\begin{align*}
+	v_B = v_T = r - (1 + \lambda_B + \lambda_T) \hat{x} &= r - (1 + \lambda_B + \lambda_T)(1 - \hat{x}) \\
+	\hat{x} + \lambda_B\hat{x} + \lambda_T\hat{x} &= 1 + \lambda_B + \lambda_T - \hat{x} - \lambda_B\hat{x} - \lambda_T\hat{x} \\
+	\hat{x} &= \frac{1 + \lambda_B + \lambda_T}{2 ( 1 + \lambda_B + \lambda_T)} = \frac{1}{2}
+\end{align*}
+
+\solution{Without even doing any math, once we see that $\hat{x}$ (and thus the voter share for each candidate) is completely unaffected by $\lambda$, it is clear that advertising in this model is useless and in fact actively negative, as the advertising costs from before still apply. Therefore, neither candidate will choose to advertise, but just as before they will each receive half of the votes.}
+\end{enumerate} 
+
+\item[3)]
+\begin{enumerate}
+	\item[1.]
+	For the $\lambda$ of consumers who can directly observe $p_1$ and $p_2$, we can solve this as we would any other Hotelling model: by finding the indifferent consumer located at $\hat{x}$, which also represents the quantity for firm 1:
+	\begin{align*}
+		r - \tau(\hat{x}) - p_1 &= r - \tau(1-\hat{x}) - p_2 \\
+		p_2 - p_1 + \tau &= \tau \hat{x} + \tau \hat{x} \\
+		q_1 = \hat{x} &= \frac{p_2 - p_1}{2\tau} + \frac{1}{2} \\
+		q_2 = 1 - \hat{x} &= \frac{p_1 - p_2}{2\tau} + \frac{1}{2}
+	\end{align*}
+
+	The $1-\lambda$ consumers are still split between firms 1 and 2 following the derived equation, but instead they use the \textit{expected} prices $p_1^e$ and $p_2^e$. As such, we can set up our profit equation for firm 1 (and by extension, firm 2 via symmetry) as such:
+	\begin{align*}
+		max_{p_1} \pi_1 &= p_1 * [\lambda(\frac{p_2-p_1}{2\tau} + \frac{1}{2}) + (1-\lambda)(\frac{p_2^e - p_1^e}{2\tau} + \frac{1}{2})] \\
+		\frac{\partial \pi_1}{\partial p_1} = 0 &= p_1 * - \frac{\lambda}{2\tau} + [\lambda(\frac{p_2-p_1}{2\tau} + \frac{1}{2}) + (1-\lambda)(\frac{p_2^e - p_1^e}{2\tau} + \frac{1}{2})]
+	\end{align*}
+
+	In equilibrium, $p_i = p_i^e$ and $p_i = p_j \ \forall i,j$ via symmetry, so we simply solve for the value of $p_1$ that allows this equation to hold:
+	\begin{align*}
+		0 &= \frac{-p_1\lambda}{2\tau} + [\lambda(\frac{p_1-p_1}{2\tau} + \frac{1}{2}) + (1-\lambda)(\frac{p_1 - p_1}{2\tau} + \frac{1}{2})]\\
+		&= \frac{-p_1\lambda}{2\tau} + 0 + \frac{1}{2} \\
+		&= -p_1\lambda + \tau \\
+		\therefore p_1 &= \frac{\tau}{\lambda} = p_2
+	\end{align*}
+	\solution{$p_1 = p_2 = \frac{\tau}{\lambda}$}
+	\item[2.]
+	As can be plainly seen from the definitions of equilibrium prices, an increase in $\lambda$ decreases prices, which increases consumer surplus. Intuitively, this makes sense because ``more transparent" markets should be more competitive, and a more competitive market is beneficial for consumers.
+	\item[3.]
+	By definition, a fully-covered market has no deadweight loss. Therefore, a policymaker who only cares about total surplus wouldn't care about how transparent the market is, as that doesn't change how much surplus there is, only how it's allocated between consumers and producers.
+	
+	\item[4.] We redo the problem as before, but this time replace $p_2^e$ with just $p_2$. We start with firm 1's first-order condition since we already derived it earlier:
+	\begin{align*}
+		\frac{\partial \pi_1}{\partial p_1} = 0 &= p_1 * - \frac{\lambda}{2\tau} + [\lambda(\frac{p_2-p_1}{2\tau} + \frac{1}{2}) + (1-\lambda)(\frac{p_2 - p_1^e}{2\tau} + \frac{1}{2})] \\
+		&= \frac{-p_1\lambda}{2\tau} + \frac{p_2-p_1}{2\tau} + \frac{1}{2} \\
+		&= -p_1\lambda + p_2 - p_1 + \tau \\
+		\therefore p_1 &= \frac{p_2 + \tau}{1 + \lambda}
+	\end{align*} 
+	Then we solve for firm 2:
+	\begin{align*}
+		max_{p_2} \pi_2 &= p_2 * [\lambda(\frac{p_1 - p_2}{2\tau} + \frac{1}{2}) + (1-\lambda)(\frac{p_1^e - p_2}{2\tau} + \frac{1}{2})] \\
+		\frac{\partial \pi_2}{\partial p_2} &= p_2 * (\lambda(\frac{-1}{2\tau}) + (1-\lambda)(-\frac{1}{2\tau})) + [\lambda(\frac{p_1 - p_2}{2\tau} + \frac{1}{2}) + (1-\lambda)(\frac{p_1^e - p_2}{2\tau} + \frac{1}{2})] \\
+		&= \frac{-p_2}{2\tau} + \frac{p_1 - p_2}{2\tau} + \frac{1}{2} \\
+		&= p_1 - 2p_2 + \tau \\
+		\therefore p_2 &= \frac{p_1 + \tau}{2} \\
+		\therefore p_1 &= \frac{\frac{p_1 + \tau}{2} + \tau}{1 + \lambda} \Rightarrow 2p_1 + 2p_1\lambda = p_1 + 3\tau \\
+		\therefore p_1 &= \frac{3}{1 + 2\lambda} \tau \\
+		\therefore p_2 &= \frac{\frac{3}{1 + 2\lambda} \tau + \tau}{2} = \frac{2 + \lambda}{1 + 2\lambda}\tau
+	\end{align*}
+	To analyze the effect of $\lambda$ on firm 1's profit, we simply take the derivative:
+	\begin{align*}
+		\pi_1 &= p_1*q_1 = p_1 * [\frac{p_2 - p_1}{2\tau} + \frac{1}{2}] = [\frac{3}{1 + 2\lambda} \tau] * [\frac{\frac{2 + \lambda}{1 + 2\lambda}\tau - \frac{3}{1 + 2\lambda} \tau}{2\tau} + \frac{1}{2}] \\
+		\frac{\partial \pi_1}{\partial \lambda} &= -\frac{9(2\lambda-1)\tau}{2(1+2\lambda)^3}
+	\end{align*}
+	\solution{In equilibrium, $p_1 = \frac{3}{1 + 2\lambda} \tau, p_2=\frac{2 + \lambda}{1 + 2\lambda}\tau$. Firm 1's profit is decreasing in $\lambda$ whenever $\lambda > \frac{1}{2}$ and vice versa, which also tells us that Firm 1's profit is maximized when $\lambda = \frac{1}{2}$. Intuitively, this means that Firm 1 will want to be non-transparent up to a certain point; this is because non-transparency causes Firm 2 to raise their price, which increases Firm 1's market share, but eventually the benefit of being non-transparent will decrease as the firms charge closer prices (note that the firms charge the same price when $\lambda = 1$)}
+\end{enumerate} 
 
 
 \end{enumerate}
