@@ -1,0 +1,123 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{graphicx,amssymb,amsmath,bm,color,multicol}
+\usepackage{../newcommand}
+\sloppy
+\newcommand{\ignore}[1]{}
+
+\newenvironment{proof}{\noindent{\bf Proof:}}{\qed\bigskip}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma} 
+\newtheorem{claim}{Claim}
+\newtheorem{fact}{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{observation}{Observation}
+\newtheorem{example}{Example}
+\newcommand{\qed}{\rule{7pt}{7pt}}
+
+\newcommand{\homework}[4]{
+	\thispagestyle{plain} 
+	\newpage
+	\setcounter{page}{1}
+	\noindent
+	\begin{center}
+		\framebox{ \vbox{ \hbox to 6.28in
+				{\bf ECON 4190: Industrial Organization \hfill #1} %change course name
+				\vspace{4mm}
+				\hbox to 6.28in
+				{\hspace{2.5in}\large\mbox{Homework #2}}
+				\vspace{4mm}
+				\hbox to 6.28in
+				{{\it Collaborators: #3\hfill}}
+			}}
+		\end{center}
+	}
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+% Modify this command to be your name and computing ID
+\homework{Fall 2021}{$9$}{Alex Shen (as5gd), Max Bresticker (mtb9sex)}
+
+Pledge: On my honor, I pledge that I have neither given nor received help on this assignment 
+Signature: \textit{Alex Shen, Max Bresticker}
+
+\begin{enumerate}
+	
+\item \begin{enumerate}
+	\item Intuitively, the simple answer is just that firm 1 will set its price to be just below firm 2's costs, or $p_1 = c_2 - \epsilon \approx c_2$. They can always do this and still be profitable because by definition, $c_1 < c_2$. This is sufficient to capture the entire market, but in the case where $c_2$ is sufficiently high, it may not be the optimal price for firm 1 when it can choose from any price below $c_2$. For this threshold, we simply solve for what firm 1 would do as a monopolist:
+	\begin{align*}
+		max_{p_1} \pi_1 &= (10-p_1) * (p_1 - 1)\\
+		\frac{\partial \pi_1}{\partial p_1} = 0 &= -1 (p_1 - 1) + (10 - p_1) = 11 - 2p_1 \\
+		2p_1 &= 11 \Rightarrow p_1 = 5.5
+	\end{align*}
+	\solution{From this, we conclude that $p_1 = c_2$ if $c_2 \leq 5.5$, otherwise $p_1 = 5.5$.}
+
+	\item When $c_2 \leq 5.5$, the firms could collude to set price to the monopolist price of 5.5. When $c_2 > 5.5$, firm 1 already has a monopoly in the Bertrand equilibrium because firm 2's costs are too high to charge the monopolist price. Since firm 1 has no incentive to change what it is already doing, no collusion is possible.
+	\item No -- just like in a normal Bertrand case, even when colluding would be technically possible, without any possibility of punishment both firms would want to undercut each other until they return to the Bertrand equilibrium prices.
+	\item Firm 2's 
+\end{enumerate} 
+
+\item[14.1]
+\begin{enumerate}
+	\item[1.] We solve the Cournot equilibrium as normal: finding reaction functions and then solving the system of equations. The problem is quite simple via symmetry:
+	\begin{align*}
+		max_{q_1} \pi_1 &= (260 - q_1 - q_2 - 20) q_1 \\
+		\frac{\partial\pi_1}{\partial q_1} &= 240 - 2q_1 - q_2 \\
+		q_1 &= 120 - \frac{1}{2}q_2 \Rightarrow q_2 = 120 - \frac{1}{2}q_1 \\
+		q_1 &= 120 - \frac{1}{2}(120 - \frac{1}{2}q_1) = 60 + \frac{1}{4}q_1 \\
+		\therefore q_1^C = q_2^C &= 80 \\
+		\therefore \pi_1^C = \pi_2^C &= 80 * (260 - 160 - 20) = 6400
+	\end{align*}
+	Monopolist profit is also quite simple:
+	\begin{align*}
+		max_Q \pi &= (260 - Q - 20) Q \\
+		\frac{\partial\pi}{\partial Q}= 0 &= 240 - 2Q \\
+		\therefore Q &= 120 \Rightarrow \pi = 120 * 120 = 14400
+	\end{align*}
+	\solution{In Cournot duopoly, both firms produce 80 recieve a profit of 6400. In monopoly, the monopolist produces 120 and recieves a profit of 14400.}
+	\item[2.] Firms collude to each produce 60 (half of the monopoly quantity of 120) and split profits equally until one of them deviates - then the other will produce the Cournot quantity of 80, forcing the other to also produce the Cournot quantity.
+	\item[3.] For collusion to be sustainable, the net present value of the profit from colluding forever must be higher than the NPV of cheating. In other terms, getting half of the monopolist profit forever must be better than cheating once and then getting the Cournot equilibrium profit forever. Assuming that firm 2 is setting the collusive quantity of $q=60$, we can use firm 1's reaction function to know that their best response i.e. the quantity they would set if they're cheating is $q_1 = 120-30 = 90$, which will yield a profit of $(260 - 60 - 90 - 20)*90 = 8100$. (The reverse also applies via symmetry.) Knowing this, we can solve for the discount factor: 
+	\begin{align*}
+		\frac{\pi^M}{2} * \frac{1}{1-\delta} &\geq \pi^D + \pi^C * \frac{\delta}{1 - \delta}\\
+		\frac{14400}{2} * \frac{1}{1-\delta} &\geq 8100 + 6400 * \frac{\delta}{1 - \delta}\\
+		7200 &\geq 8100 - 8100\delta + 6400\delta \\
+		1700\delta &> 900 \\
+		\delta &\geq \frac{9}{17} 
+	\end{align*} 
+	\solution{For collusion to be sustainable, we need a discount factor $\delta \geq \frac{9}{17}$ }
+\end{enumerate}
+
+
+\item[14.2]
+\begin{enumerate}
+	\item[1.] With a discount factor of 0, this is essentially a one-shot Bertrand game, to which we know the solution. The firms will undercut each other until $p = c$, and neither firm recieves any profits.
+	\item[2.] Note that in a repeated Bertrand game, the reward for collusion is half the monopoly profit $\pi^M$ forever. The value of cheating is the full monopoly profit once and then 0 forever, as you will be punished in every subsequent round. With that in mind, we can solve for the value(s) of $\delta$ that make collusion possible. Let $x$ equal the share of profit a firm recieves (i.e. $\lambda$ for firm 1, $1 - \lambda$ for firm 2):
+	\begin{align*}
+		x * \pi^M * \frac{1}{1-\delta} &\geq \pi^M \\
+		\delta &\geq 1 - x \\
+		\therefore \delta_1 &\geq 1 - \lambda; \delta_2 \geq \lambda
+	\end{align*}  
+	In the case where $\lambda = \frac{1}{2}$, $x$ is the same for both firms, $\frac{1}{2}$.
+
+	\solution{Collusion will be sustainable for any $\lambda \geq \frac{1}{2}.$}
+	\item[3.] Reusing our work from part 2, we can see that for any $\lambda > \frac{1}{2}$, firm 2's threshold for collusion will be higher. In other words, firm 1 will be willing to collude at any value of $\delta$ where firm 2 is willing to collude, so we use only firm 2's threshold to know that collusion is only sustainable if $\delta \geq \lambda$. 
+	\item[4.] Recall our initial inequality of $x * \pi^M * \frac{1}{1-\delta} \geq \pi^M$. Since $\pi^M$ cancels out, mathematically we can replace it with any numerical value and we would still reach the same result. However, in economic terms only values between $c$ and $p^M$ make sense (as anything below $c$ would yield negative profits, and producing above $p^M$ would decrease profits.
+	\item[5.] Similar as before, but instead cheating yields the monopoly profit $\tau$ times (discounted in later rounds). The inequality setup is still mostly the same:
+	\begin{align*}
+		x * \pi^M * \frac{1}{1-\delta} \geq \pi^M \sum_{i=0}^{\tau-1} \delta
+	\end{align*}   
+\end{enumerate} 
+
+
+\end{enumerate}
+	
+\end{document}
