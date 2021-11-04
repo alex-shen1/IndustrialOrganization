@@ -59,18 +59,29 @@ Signature: \textit{Alex Shen, Max Bresticker}
 		\frac{\partial \pi_1}{\partial p_1} = 0 &= -1 (p_1 - 1) + (10 - p_1) = 11 - 2p_1 \\
 		2p_1 &= 11 \Rightarrow p_1 = 5.5
 	\end{align*}
-	\solution{From this, we conclude that $p_1 = c_2$ if $c_2 \leq 5.5$, otherwise $p_1 = 5.5$.}
+	\solution{From this, we conclude that $p_1 = c_2$ if $c_2 \leq 5.5$ with firm 1 recieving profits $\pi_1 = (10-c_2)(c_2-1)$, otherwise $p_1 = 5.5$ and $\pi_1 = (10-5.5)(5.5-1) = 4.5^2$. In either case, firm 2 recieves no profits.}
 
 	\item When $c_2 \leq 5.5$, the firms could collude to set price to the monopolist price of 5.5. When $c_2 > 5.5$, firm 1 already has a monopoly in the Bertrand equilibrium because firm 2's costs are too high to charge the monopolist price. Since firm 1 has no incentive to change what it is already doing, no collusion is possible.
 	\item No -- just like in a normal Bertrand case, even when colluding would be technically possible, without any possibility of punishment both firms would want to undercut each other until they return to the Bertrand equilibrium prices.
-	\item Firm 2 chooses between simply receiving half the monopoly profit forever or the entire monopoly profit once - the threshold $\delta$ is easily calculated as follows:
+	\item Collusion is sustainable when both firms recieve a higher value from sticking to collusion than from cheating. The choice for both firms is between getting half the monopoly profit ($\pi^M = (10-5.5)(5.5-1) = 4.5^2$) forever, or the entire monopoly profit once and their Cournot equilibrium profit every round after that. 
+	
+	Firm 2 recieves nothing in the Cournot equilibrium, so they simply choose between receiving half the monopoly profit forever or the entire monopoly profit once - the threshold $\delta$ is easily calculated as follows:
 	\begin{align*}
 		\frac{1}{2} * \pi^M * \frac{1}{1-\delta} &\geq \pi_M \\
 		1 &\geq 2 - 2\delta \\
 		\delta &\geq \frac{1}{2}
 	\end{align*}
 
-	Firm 1's profit 
+	Firm 1's faces a similar decision, but in Cournot they are also recieving a profit of $(10-c_2)(c_2-1)$:
+	\begin{align*}
+		\frac{1}{2} * \pi^M * \frac{1}{1-\delta} &\geq \pi_M + \frac{\delta}{1-\delta} * (10-c_2)(c_2-1) \\
+		\frac{1}{2} * 4.5^2 &\geq 4.5^2 (1-\delta) + \delta (10-c_2)(c_2-1) \\
+		0 &\geq \frac{1}{2} 4.5^2 - 4.5^2\delta + \delta (10-c_2)(c_2-1) \\
+		\delta &\geq \frac{\frac{1}{2}4.5^2}{4.5^2 - (10-c_2)(c_2-1)}
+	\end{align*}
+
+	If we consider that $\delta$ must be less than or equal to 1 (which is true by definition), solving for $c_2$ yields $2.32 \leq c_2 \leq 8.68$. However, since we also already know that collusion is only possible when $c_2 \leq$ 5.5, this new upper bound is redundant. 
+	\solution{$\delta \geq \frac{1}{2}$ and $\delta \geq \frac{\frac{1}{2}4.5^2}{4.5^2 - (10-c_2)(c_2-1)}$ where $2.32 \leq c_2 \leq 5.5$ }
 \end{enumerate} 
 
 \item[14.1]
