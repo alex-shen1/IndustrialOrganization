@@ -63,7 +63,14 @@ Signature: \textit{Alex Shen, Max Bresticker}
 
 	\item When $c_2 \leq 5.5$, the firms could collude to set price to the monopolist price of 5.5. When $c_2 > 5.5$, firm 1 already has a monopoly in the Bertrand equilibrium because firm 2's costs are too high to charge the monopolist price. Since firm 1 has no incentive to change what it is already doing, no collusion is possible.
 	\item No -- just like in a normal Bertrand case, even when colluding would be technically possible, without any possibility of punishment both firms would want to undercut each other until they return to the Bertrand equilibrium prices.
-	\item Firm 2's 
+	\item Firm 2 chooses between simply receiving half the monopoly profit forever or the entire monopoly profit once - the threshold $\delta$ is easily calculated as follows:
+	\begin{align*}
+		\frac{1}{2} * \pi^M * \frac{1}{1-\delta} &\geq \pi_M \\
+		1 &\geq 2 - 2\delta \\
+		\delta &\geq \frac{1}{2}
+	\end{align*}
+
+	Firm 1's profit 
 \end{enumerate} 
 
 \item[14.1]
@@ -111,10 +118,14 @@ Signature: \textit{Alex Shen, Max Bresticker}
 	\solution{Collusion will be sustainable for any $\lambda \geq \frac{1}{2}.$}
 	\item[3.] Reusing our work from part 2, we can see that for any $\lambda > \frac{1}{2}$, firm 2's threshold for collusion will be higher. In other words, firm 1 will be willing to collude at any value of $\delta$ where firm 2 is willing to collude, so we use only firm 2's threshold to know that collusion is only sustainable if $\delta \geq \lambda$. 
 	\item[4.] Recall our initial inequality of $x * \pi^M * \frac{1}{1-\delta} \geq \pi^M$. Since $\pi^M$ cancels out, mathematically we can replace it with any numerical value and we would still reach the same result. However, in economic terms only values between $c$ and $p^M$ make sense (as anything below $c$ would yield negative profits, and producing above $p^M$ would decrease profits.
-	\item[5.] Similar as before, but instead cheating yields the monopoly profit $\tau$ times (discounted in later rounds). The inequality setup is still mostly the same:
+	\item[5.] Firm 1 has the same incentive structure as before, but firm 2's is slightly modified such that  cheating instead yields the monopoly profit $\tau$ times (discounted in later rounds). The inequality setup is still mostly the same:
 	\begin{align*}
-		x * \pi^M * \frac{1}{1-\delta} \geq \pi^M \sum_{i=0}^{\tau-1} \delta
+		(1-\lambda) * \pi^M * \frac{1}{1-\delta} &\geq \pi^M \sum_{i=0}^{\tau-1} \delta \\
+		&\geq \pi^M * \frac{1 - \delta^{\tau-1+1}}{1-\delta} \\
+		1-\lambda &\geq 1 - \delta^\tau \\
+		\delta &\geq \sqrt[\tau]{\lambda}
 	\end{align*}   
+	\solution{$p^M$ is played along the equilibrium path whenever $\delta \geq \sqrt[\tau]{\lambda}$. Increasing $\tau$ decreases the minimum discount factor where firm 2 will not cheat, which means that a higher $\tau$ makes collusion less likely.}
 \end{enumerate} 
 
 
